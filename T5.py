@@ -35,7 +35,7 @@ naula = value2 * y
 luoti = value3 * b
 total = leivi + naula + luoti
 
-#tiedosto testi.py mallina käyttäen -> print(f"Kolmion ala on: {total:10.2f}")
+# tiedosto testi.py mallina käyttäen -> print(f"Kolmion ala on: {total:10.2f}")
 # muokkasin -> 10.1f
 
 print (f"Leivisköjen massa on: + {leivi:10.1f}" + "g")
