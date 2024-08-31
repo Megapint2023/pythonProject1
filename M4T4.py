@@ -1,7 +1,7 @@
 # Kirjoita peli, jossa tietokone arpoo kokonaisluvun väliltä 1..10.
 # Kone arvuuttelee lukua pelaajalta siihen asti, kunnes tämä arvaa oikein.
 # Kunkin arvauksen jälkeen ohjelma tulostaa tekstin Liian suuri arvaus, Liian pieni arvaus tai Oikein.
-# Huomaa, että tietokone ei saa vaihtaa lukuaan arvauskertojen välissä.
+# Huomaa, että tietokone ei saa vaihtaa lukuaan arvauskertojen välissä...
 
 print ("Arvaa numero väliltä 1-10")
 import random
@@ -19,3 +19,4 @@ while True:
         print ("Väärin, luku on suurempi. Arvaa uudestaan!")
     elif arvaus > secret_number:
         print ("Väärin, luku on pienempi. Arvaa uudestaan!")
+
