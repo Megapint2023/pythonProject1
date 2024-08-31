@@ -16,10 +16,13 @@
 #===========================
 
 kaverit = []
-for nimi in range(5):
+
+lkm = int(input("Montako kaveria?"))
+
+for x in range(lkm):
     nimi = input ("Anna nimi:")
     kaverit.append(nimi)
 
 print("Nimilista:")
 for kaveri in kaverit:
-    print (kaverit)
+    print (kaveri)
