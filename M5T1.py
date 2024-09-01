@@ -20,3 +20,4 @@ for x in range(arpakuutio): # x on loopin toimivuutta varten
 total = sum(numbers)
 print (numbers)
 print ("Numeroiden summa yht: " + str(total))
+
