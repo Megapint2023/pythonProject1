@@ -35,14 +35,20 @@
 # n = osuma
 # n = x^2+y^2<1
 
-print ("Ohjelma laskee algorytmin avulla π:n likiarvon.")
+print ("Ohjelma laskee π:n likiarvon generoimien satunnaispisteiden avulla.")
+while True:
+    shots = input("Syötä pisteiden määrä: ")
+    N = int(shots)  # pisteet
+    if N < 1 or N > 10000000:
+        print("Virheellinen luku, syötä arvo 1 ja 10 milj. välillä.")
+    else:
+        break
+# While True loop: pitää huolen että numero on 1-10milj välillä toimivuuden takaamiseksi.
+# N = int(shots) muuttaa syötetyn arvon pythonille ymmerrättäväksi kokonaisluvuksi
 
-shots = input("Syötä likiarvon laskemiseen arvottavien satunnaispisteiden määrä: ")
-N = int(shots) # pisteet
 n = 0 # osumat
-
 import random
-for pisteet in range(N):
+for pisteet in range(N): # range funtio eli listan läpikäynti
     x = random.uniform(-1, 1) #sattumanvarainen murtoluku -1  ja 1 väliltä
     y = random.uniform(-1, 1) #sattumanvarainen murtoluku -1  ja 1 väliltä
 
