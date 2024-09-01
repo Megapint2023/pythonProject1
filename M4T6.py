@@ -37,7 +37,7 @@
 
 print ("Ohjelma laskee algorytmin avulla π:n likiarvon.")
 
-shots = input("Syötä arvottavien pisteiden määrä.")
+shots = input("Syötä arvottavien pisteiden määrä: ")
 N = int(shots) # pisteet
 n = 0 # osumat
 
@@ -45,9 +45,12 @@ import random
 x = random.uniform(-1, 1) #sattumanvarainen murtoluku -1  ja 1 väliltä
 y = random.uniform(-1, 1) #sattumanvarainen murtoluku -1  ja 1 väliltä
 
-if x**2 + y**2 < 1: # KAAVA ypäyhtälö  x^2+y^2<1  ELI yhtälö = π≈4n/N
-    n += 1 # Mikäli osuma muutuja "n" arvo nostetaan +1:llä
+if x**2 + y**2 < 1: # KAAVA: Jos toteutuu ypäyhtälö x^2+y^2<1 = osuma
+    n += 1 # Mikäli osuma -> muutuja "n" arvoa nostetaan +1:llä
 
+likiarvo = 4 * n / N # Kaava likiarvon laskemiseen = π≈4n/N
+likiarvo = float(likiarvo)
+print (likiarvo)
 
 
 
