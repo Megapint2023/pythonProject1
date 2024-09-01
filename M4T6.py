@@ -27,17 +27,30 @@
 # -> Eli kirjoita ohjelma joka kysyy N (eli montako pistettä arvotaan) ja laskee osumat annetulla kaavalla
 # sekä printtaa piin likiarvon.
 
+
+shots = input("Pisteiden määrä.")
+shots = float(shots)
+
+while shots = N
+
+# ========================================
+# pisteet (-1,-1), (1,-1), (1,1) ja (-1,1)
 nelio_A = 2 * 2
-#pisteet (-1,-1), (1,-1), (1,1) ja (-1,1)
-ympyra_A = πr^2
+ympyra_A = πr ^ 2
+osuma_A = x^2+y^2<1
 
-osuma_A = π≈4n/N
+print ("Ohjelma laskee algorytmin avulla π:n likiarvon.")
 
-x = -1, 1
-y = -1, 1
+shots = input("Syötä arvottavien pisteiden määrä.")
+shots = float(shots)
+
+shots = N
 
 import random
-
 x = random.randint(-1, 1)
 y = random.randint(-1, 1)
+
+if x and y == x^2+y^2<1
+    N = n
+
 
