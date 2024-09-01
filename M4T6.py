@@ -6,34 +6,37 @@
 
 # 2.
 # Jos neliön sisälle arvotaan satunnaisesti suuri määrä pisteitä,
-# osuu niistä myös ympyrän sisälle likimain niin suuri osuus kuin ympyrän pinta-ala on neliön pinta-alasta eli πr^2/4,
-# joka (koska ympyrän säde on yksi) sievenee muotoon π/4.
+# osuu niistä myös ympyrän sisälle.
+# Likimain osuus ympyrän pinta-ala:sta verrattuna neliön pinta-alaan on πr^2/4,
+# Kaava sievenee muotoon ->  π/4.
 
 #3.
 # Tästä saadaan yksinkertainen menetelmä piin likiarvon laskemiseksi:
 # Arvotaan neliön B sisälle suuri määrä satunnaisissa kohdissa olevia pisteitä, esimerkiksi miljoona.
-# Olkoon N tämä pisteiden kokonaismäärä. Jokaisesta neliön B sisään arvotusta pisteestä testataan vuorollaan,
-# jääkö se myös yksikköympyrän A sisälle.
-# Olkoon n ympyrän sisälle jäävien pisteiden kokonaismäärä.
+# Olkoon N tämä pisteiden kokonaismäärä. Jokaisesta neliön sisään arvotusta pisteestä testataan vuorollaan,
+# jääkö se myös yksikköympyrän sisälle.
+# Olkoon osuma =  n (ympyrän sisälle jäävien pisteiden kokonaismäärä).
 # Nyt pätee n/N≈π/4, josta saadaan π≈4n/N.
-#KAAVA = π≈4n/N
+# KAAVA = π≈4n/N
 
 #4.
-# Kirjoita ohjelma, joka kysyy arvottavien pisteiden määrän käyttäjältä ja toteuttaa piin likiarvon laskennan edellä kuvatulla menetelmällä.
-# Lopuksi ohjelma tulostaa piin likiarvon käyttäjälle.
-# (Huomaa, että jokaisesta arvotusta pisteestä (x,y) on helppoa testata onko se yksikköympyrän A sisällä:
-# riittää testata, toteuttaako piste epäyhtälön x^2+y^2<1.)
+# Kirjoita ohjelma, joka kysyy arvottavien pisteiden määrän käyttäjältä
+# ja toteuttaa PII:n likiarvon laskennan edellä kuvatulla menetelmällä.
+# Lopuksi ohjelma tulostaa PII:n likiarvon käyttäjälle.
+# (Huomaa, että jokaisesta arvotusta pisteestä (x,y) on helppoa testata onko se yksikköympyrän sisällä:
+# epäyhtälön avulla. Testaus epäyhtälöllä: x^2+y^2<1
 
-# -> Eli kirjoita ohjelma joka kysyy N (eli montako pistettä arvotaan) ja laskee osumat annetulla kaavalla
-# sekä printtaa piin likiarvon.
-
+# -> Eli kirjoita ohjelma joka kysyy (eli montako pistettä arvotaan)
+# ja laskee annetun kaavan avalla osumat, jonka jälkeen printtaa PII:n likiarvon.
 # ========================================
+# N = input
+# n = osuma
 # pisteet (-1,-1), (1,-1), (1,1) ja (-1,1)
-
 # nelio_A = 2 * 2
 # mpyra_A = πr ^ 2
-# n = osuma
 # n = x^2+y^2<1
+# ========================================
+
 
 print ("Ohjelma laskee π:n likiarvon generoimien satunnaispisteiden avulla.")
 while True:
@@ -58,6 +61,3 @@ for pisteet in range(N): # range funtio eli listan läpikäynti
 likiarvo = 4 * n / N # Kaava likiarvon laskemiseen = π≈4n/N
 likiarvo = float(likiarvo)
 print ("Pii:n likiarvo: " + str(likiarvo))
-
-
-
