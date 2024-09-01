@@ -33,3 +33,11 @@ ympyra_A = πr^2
 
 osuma_A = π≈4n/N
 
+x = -1, 1
+y = -1, 1
+
+import random
+
+x = random.randint(-1, 1)
+y = random.randint(-1, 1)
+
