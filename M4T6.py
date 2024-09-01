@@ -37,7 +37,7 @@
 
 print ("Ohjelma laskee algorytmin avulla π:n likiarvon.")
 
-shots = input("Syötä arvottavien pisteiden määrä: ")
+shots = input("Syötä likiarvon laskemiseen arvottavien satunnaispisteiden määrä: ")
 N = int(shots) # pisteet
 n = 0 # osumat
 
@@ -51,7 +51,7 @@ for pisteet in range(N):
 
 likiarvo = 4 * n / N # Kaava likiarvon laskemiseen = π≈4n/N
 likiarvo = float(likiarvo)
-print (likiarvo)
+print ("Pii:n likiarvo: " + str(likiarvo))
 
 
 
