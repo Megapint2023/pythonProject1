@@ -14,7 +14,7 @@ username = "python"
 password = "rules"
 
 kirjautumisyritys = 0
-while kirjautumisyritys <= 5:
+while kirjautumisyritys < 5:
     username_input = input("Syötä käyttäjätunnus:")
     password_input = input("Syötä salasana:")
 
