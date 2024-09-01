@@ -5,7 +5,7 @@
 # Toisaalta esimerkiksi luku 21 ei ole alkuluku, koska se voidaan jakaa tasan myös luvulla 3 tai luvulla 7.
 
 
-alkuluku = None
+alkuluku = True
 
 while True:
     luku = input("Syötä luku: ")
@@ -15,6 +15,15 @@ while True:
     else:
         break
 
-if luku == luku and luku % 1 == 0:
-    luku = alkuluku
-    print (str(alkuluku) + " on alkuluku!")
+if luku == 1:
+    alkuluku = False
+else:
+    for x in range(2, luku):
+        if luku % x == 0:
+            alkuluku = False
+            break
+
+if alkuluku:
+    print (str(luku) + " on alkuluku!")
+else:
+    print(str(luku) + " ei ole alkuluku.")
