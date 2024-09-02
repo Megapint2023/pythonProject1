@@ -5,12 +5,10 @@
 
 print("Syötä viiden kaupungin nimet.")
 
-kaupungit = ["","","","",""]
+kaupungit = []
 
-for x in range (kaupungit):
-    kaupunki = input("Syötä kaupungin nimi: ")
-        kaupunki.append()
-        break
+for x in range (5):
+    kaupunki = input("Kaupunki: ")
+    kaupungit.append(kaupunki)
 
-kaupungit.sort
 print (kaupungit)
