@@ -7,18 +7,9 @@ print("Syötä viiden kaupungin nimet.")
 
 kaupungit = ["","","","",""]
 
-while kaupunki = "":
-    kaupunki.append()
-
-kaupunki[0] = input("Ensimmäisen kaupunki: ")
-kaupunki[1] = input("Toisen kaupunki:")
-kaupunki[2] = input("Kolmannen kaupunki:")
-kaupunki[3] = input("Neljännen kaupunki:")
-kaupunki[4] = input("Viidennen kaupunki:")
-
-for x in range (luku):
-    if luku % x == 0:
-        alkuluku = False
+for x in range (kaupungit):
+    kaupunki = input("Syötä kaupungin nimi: ")
+        kaupunki.append()
         break
 
 kaupungit.sort
