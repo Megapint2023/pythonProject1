@@ -19,10 +19,10 @@ if luku == 1:
     alkuluku = False
 else:
     for x in range(2, luku):  # muuttujaan "x" tallettuu joka ikinen arvo 2 - syötetty arvo
-        if luku % x == 0:     # Mikäli yhdenkään jakojäännökseksi tulee "0"  -> alkuluku = false
+        if luku % x == 0:     # Mikäli yhdenkään jakojäännökseksi tulee "0"  -> alkuluku =(false)
             alkuluku = False
             break
-# range(2, luku) toimii koska se tarkistaa kaikki luvut paitsi viimeisen (Python hard coded)
+# for x in range(2, luku) toimii koska se tarkistaa kaikki luvut paitsi viimeisen
 
 if alkuluku:
     print (str(luku) + " on alkuluku!")
