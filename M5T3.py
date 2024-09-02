@@ -29,3 +29,4 @@ if alkuluku:
 else:
     print(str(luku) + " ei ole alkuluku.")
 # viimeinen ehtolause printtaa tiedon tuloksen mukaan.
+#
