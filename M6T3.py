@@ -8,17 +8,18 @@
 print ("Ohjelma muuttaa gallonit litroiksi.")
 print ("Saat lopetettua ohjelman antamalla negatiivisen arvon.")
 
-def galloneistlitroiks():
+def galloneistlitroiks(gallons):
+    return gallons * 3.785
+
+def (paaohjelma):
     while True:
-       gallons = float("Nontako gallonia muutetaan litroiksi")
+       gallons = float(input("Nontako gallonia muutetaan litroiksi"))
        if gallons < 0:
            print ("Syötit negatiivisen arvon -> ohjelma loppu.")
            break
        else:
-       litra = gallons * 3.785
-       litra = float(litra)
-       return litra
-       print (litra)
+           litra = galloneistlitroiks(gallons)
+           print (str(gallons) + " gallonia on = " + str(litra) + " litraa."))
 
 
-galloneistlitroiks()
+paaohjelma()
