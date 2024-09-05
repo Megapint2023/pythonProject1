@@ -6,12 +6,16 @@
 #parametriton eli ilman numero arvoa
 # jos laitan funtkioon muuttujan se ei ole numero arvo
 # eli voin tehdä näin ->
-
-def parametriton(noppa):
-    numero = noppa
-    return numero
-
-parametriton()
 import random
-noppa = random.randint(1, 6)
-print(parametriton)
+
+def parametriton():
+    arvo = random.randint (1, 6 )
+    arvo = nopannumero
+    return nupannumero
+
+
+nopanheitto()
+if nopannumero == 6:
+    print (str(nopannumero) + "! Osuit!")
+else:
+    print ("Heitit: " + str(nopanheitto) + ":sen")
