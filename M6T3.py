@@ -4,3 +4,15 @@
 # Muunnos on tehtävä aliohjelmaa hyödyntäen. Muuntamista jatketaan siihen saakka,
 # kunnes käyttäjä syöttää negatiivisen gallonamäärän.
 # Yksi gallona on 3,785 litraa.
+
+
+def galloneistlitroiks():
+    while True:
+       gallons = float("Nontako gallonia muutetaan litroiksi")
+       litra = gallons * 3.785
+       litra = float(litra)
+       return litra
+
+
+
+galloneistlitroiks()
