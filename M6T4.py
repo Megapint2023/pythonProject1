@@ -3,31 +3,20 @@
 # Kirjoita testausta varten pääohjelma, jossa luot listan, kutsut funktiota ja tulostat sen palauttaman summan.
 
 
-print("Ohjelma palauttaa listassa olevien numeroiden summan.")
+print("Ohjelma listan numerot yhteen.")
 
 numerolista = [5, 11, 2, 18, 24, 19]
 
-def laskekaikki(numerolista):
+def laskekaikki(numerolista): # funktio näkee koko listan ja kiakki sen arvot
     summa = 0
-    for numero in numerolista:
-        summa = summa + numero:
-        print("- " + str(numero))
+    for i in numerolista: # python automaattisesti menee numerolistan läpi
+        summa = summa + i
+        print("- " + str(i))
     return summa
 
+yht = laskekaikki(numerolista)
+print("Listassa olevien numeroiden summa on: ", yht)
 
-laskekaikki()
-
-
-#
-#        numerolista = numerolista +1
-#
-#    return (numerolista total)
-#numerot = int(numerot)
-#numerolista.append(numerolista)
-#
-#numeroidensumma = numerolista
-#
-#print(numerot)
 
 # täytyy tehdä lista ja kirjoittaa sinne valmiiksi arvoja
 # Sitten luoda looppi joka menee listan läpi ja poimii sen arvot  ja laskee summan niille eri
