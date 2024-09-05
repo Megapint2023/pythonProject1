@@ -9,13 +9,14 @@
 import random
 
 def parametriton():
-    arvo = random.randint (1, 6 )
-    arvo = nopannumero
-    return nupannumero
+    while True:
+        nopanheitto = random.randint (1, 6 )
 
+        if nopanheitto == 6:
+            print(str(nopanheitto) + " -> Sä osuit!")
+            break
+        else:
+            print ("Heitit: " + str(nopanheitto) + ":n")
 
-nopanheitto()
-if nopannumero == 6:
-    print (str(nopannumero) + "! Osuit!")
-else:
-    print ("Heitit: " + str(nopanheitto) + ":sen")
+parametriton()
+
