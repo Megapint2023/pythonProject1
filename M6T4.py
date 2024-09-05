@@ -22,4 +22,3 @@ print("Listassa olevien numeroiden summa on: ", yht)
 # Sitten luoda looppi joka menee listan läpi ja poimii sen arvot  ja laskee summan niille eri
 # sitten laskee arvojen summan yhteen ja printtaa sen.
 # lisäksi voisin vielä printata näkyviin arvot joiden summan ohejlma on laskenut
-# Fun
