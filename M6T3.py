@@ -5,21 +5,21 @@
 # kunnes käyttäjä syöttää negatiivisen gallonamäärän.
 # Yksi gallona on 3,785 litraa.
 
-print ("Ohjelma muuttaa gallonit litroiksi.")
-print ("Saat lopetettua ohjelman antamalla negatiivisen arvon.")
+print ("Ohjelma muuttaa gallonit litroiksi (kunnes saa negatiivisen arvon).")
 
 def galloneistlitroiks(gallons):
     return gallons * 3.785
 
-def (paaohjelma):
+def paaohjelma():
     while True:
-       gallons = float(input("Nontako gallonia muutetaan litroiksi"))
+       gallons = float(input("Syötä gallonit: "))
        if gallons < 0:
            print ("Syötit negatiivisen arvon -> ohjelma loppu.")
            break
        else:
            litra = galloneistlitroiks(gallons)
-           print (str(gallons) + " gallonia on = " + str(litra) + " litraa."))
-
+           print (str(gallons) + " gallonia on = " + str(litra) + " litraa.")
 
 paaohjelma()
+
+# Koodi: Pääonjelman lopussa on siis kutsu ylimpään ohjelmaan ns "aliohjelmana"
