@@ -1,31 +1,30 @@
 # OHJELMA kysyy käyttäjältä kuukauden "numeron".
-# Sen jälkeen tulostaa vastaavan vuodenajan (kevät, kesä, syksy, talvi).
-
+# Sen jälkeen tulostaa vuodenajan (kevät, kesä, syksy, talvi).
 # Kuukausia vastaavat vuodenajat !!!!merkkijonoina monikkotietorakenteeseen!!!!.
+#
 # Parametri 3kk X4 vuodenaikaa
-# Joulukuu oltava = "1" kk
-# käyttäjänhän ei tarvitse tietää, että joulukuu = 1 kk,
-# koska toimivuus perustuu vuodenajan määrittämiseen
+# Joulukuu oltava = "1"
+
 
 print("Ohjema ilmoittaa kk vastaavan vuodenajan.")
 
+vuodenaika = ("joulukuu", "tammikuu", "helmikuu", "maaliskuu", "huhtikuu", "toukokuu", "kesäkuu", "heinakuu", "elokuu", "syyskuu", "lokakuu", "marraskuu")
+(kevat, kevat, kevat, kesa, kesa, kesa, syksy, syksy, syksy, talvi, talvi, talvi ) = mika
 
-hedelmät = ("joulukuu", "tammikuu", "helmikuu", "maaliskuu", "huhtikuu", "toukokuu", "kesäkuu", "heinakuu", "elokuu", "syyskuu", "lokakuu", "marraskuu")
-(kevat, kesa, syksi, talvu) = hedelmät
-print (f"Hedelmiä ovat {kevat}, {kesa}, {syksy} {talvi}.")
-
-kuukausi = ("joulukuu", "tammikuu", "helmikuu", "maaliskuu", "huhtikuu", "toukokuu", "kesäkuu", "heinakuu", "elokuu", "syyskuu", "lokakuu", "marraskuu")
-kknro = input("Syötä kuukauden numero 1-12: ")
-kknro = int(kknro)
-kuukausi = kuukausi[kknro]
-# print (kuukausi) - disabled
-# Nyt tämän printin sijaan tehdään aliohjelma joka,
-# muuttujan "kuukausi[kknro]":n arvon perusteella määrittääja tulostaa vuodenajan
-
-vuodenaika(hae)
+def maarita(kknro)
 
 
+
+talvi = 1, 2, 3
 kevat = 4, 5, 6
 kesa = 7, 8, 9
 syksy = 10, 11, 12
-talvi = 1, 2, 3
+
+kuukaudet = ("joulukuu", "tammikuu", "helmikuu", "maaliskuu", "huhtikuu", "toukokuu", "kesäkuu", "heinakuu", "elokuu", "syyskuu", "lokakuu", "marraskuu")
+kknro = input("Syötä kuukauden numero 1-12: ") # käyttäjänhän ei tarvitse tietää, että joulukuu = "1"
+kknro = int(kknro)
+# Nyt -> aliohjelma, joka määrittää vuodenajan
+vuodenaika()
+
+
+
