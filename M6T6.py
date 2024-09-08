@@ -19,21 +19,21 @@
 import math
 
 def pizza1(d1):
-    r1 = d1 / 2
+    r1 = d1 / 2# laskee säteen
     A1 = math.pi * r1**2 #ympyrän pinta-ala A = 𝜋 * r²
     value1 = hinta1 / A1 #tällä hetkellä A1 arvo on edelleen centteinä
     # €/cm² -> €/m². cm -> dm -> m eli 2xnollaa per porras. Täytyy kertoa 10000
     value1 = value1 * 10000# €/m²
-    print("Ensimmäisen pizzan rahavastine = " + str(value1))
+    print(f"Ensimmäisen pizzan neliömetrihinta on noin: {value1:10.1f}€/m².")
     return value1
 
-def pizza1(d2):
+def pizza2(d2):
     r2 = d2 / 2
-    A2 = math.pi * r2 #ympyrän pinta-ala A = 𝜋 * r²
-    value2 = hinta2 / A2 # €/m²
-    value2 = value2 * 10000  # €/m²
-    print("Ensimmäisen pizzan rahavastine = " + str(value2))
-    return A2
+    A2 = math.pi * r2**2
+    value2 = hinta2 / A2
+    value2 = value2 * 10000
+    print(f"Toisen pizzan neliömetrihinta on noin: {value2:10.1f}€/m².")
+    return value2
 
 print ("Ohjelma vertaa kummasta pizzasta sait enemmän vastinetta rahoillesi.")
 
@@ -46,5 +46,5 @@ d2 = float(d2)
 hinta2 = input("Syötä toisen pizzan hinta: ")
 hinta2 = float(hinta2)
 
-pizza1(value)
-pizza2(value)
+pizza1(d1)
+pizza2(d2)
