@@ -8,10 +8,19 @@
 
 print("Ohjema ilmoittaa kk vastaavan vuodenajan.")
 
-vuodenaika = ("joulukuu", "tammikuu", "helmikuu", "maaliskuu", "huhtikuu", "toukokuu", "kesäkuu",
+kuukaudet = ("joulukuu", "tammikuu", "helmikuu", "maaliskuu", "huhtikuu", "toukokuu", "kesäkuu",
               "heinakuu", "elokuu", "syyskuu", "lokakuu", "marraskuu")
+("talviaika", "talviaika", "talviaika", "talviaika", kevat, kevat, kevat, kevat, kesa, kesa, kesa, kesa, syksy, syksy, sysky, syksy ) = hedelmät
 
-def maarita(kknro)
+def vuodenajat(kknro)
+    if kknro = 1 or 2 or 3
+        print ("talvi"")
+    elif kknro = 4 or 5 or 6
+        print ("kevät")
+    elif kknro = 7 or 8 or 9
+        print ("Kesä beibe!")
+    elif kknro = 10 or 11 or 12
+        print ("kevät")
 
 talvi = 1, 2, 3
 kevat = 4, 5, 6
