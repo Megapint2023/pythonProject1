@@ -1,23 +1,20 @@
-# Kirjoita ohjelma, joka kysyy käyttäjältä kuukauden numeron.
-# Sen jälkeen ohjelma tulostaa sitä vastaavan vuodenajan (kevät, kesä, syksy, talvi).
+# OHJELMA kysyy käyttäjältä kuukauden "numeron".
+# Sen jälkeen tulostaa vastaavan vuodenajan (kevät, kesä, syksy, talvi).
 
-# Tallenna ohjelmassasi kuukausia vastaavat vuodenajat !!!!merkkijonoina monikkotietorakenteeseen!!!!.
-# Määritellään kukin vuodenaika kolmen kuukauden mittaiseksi siten, että joulukuu on ensimmäinen talvikuukausi.
+# Kuukausia vastaavat vuodenajat !!!!merkkijonoina monikkotietorakenteeseen!!!!.
+# Parametri 3kk X4 vuodenaikaa
+# Joulukuu oltava = "1" kk
+# käyttäjänhän ei tarvitse tietää, että joulukuu = 1 kk,
+# koska toimivuus perustuu vuodenajan määrittämiseen
 
-# Parametri 3X3
+print("Ohjema ilmoittaa kk vastaavan vuodenajan.")
 
-tammikuu = 2
-helmikuu = 3
-maaliskuu = 4
-huhtikuu = 5
-toukokuu = 6
-kesäkuu = 7
-heinakuu = 8
-elokuu = 9
-syyskuu = 10
-lokakuu = 11
-marraskuu = 12
-joulukuu = 1 # tähtävänanto
+kuukausi = ("tammikuu", "helmikuu", "maaliskuu", "huhtikuu", "toukokuu", "kesäkuu", "heinakuu", "elokuu", "syyskuu", "lokakuu", "marraskuu",
+"joulukuu")
+kknro = input("Syötä kuukauden numero 1-12: ")
+kknro = int(kknro)
+kuukausi = kuukausi[kknro]
+
 
 kevat = 4, 5, 6
 kesa = 7, 8, 9
