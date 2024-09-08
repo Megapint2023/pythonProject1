@@ -8,22 +8,21 @@
 
 print("Ohjema ilmoittaa kk vastaavan vuodenajan.")
 
-vuodenaika = ("joulukuu", "tammikuu", "helmikuu", "maaliskuu", "huhtikuu", "toukokuu", "kesäkuu", "heinakuu", "elokuu", "syyskuu", "lokakuu", "marraskuu")
-(kevat, kevat, kevat, kesa, kesa, kesa, syksy, syksy, syksy, talvi, talvi, talvi ) = mika
+vuodenaika = ("joulukuu", "tammikuu", "helmikuu", "maaliskuu", "huhtikuu", "toukokuu", "kesäkuu",
+              "heinakuu", "elokuu", "syyskuu", "lokakuu", "marraskuu")
 
 def maarita(kknro)
-
-
 
 talvi = 1, 2, 3
 kevat = 4, 5, 6
 kesa = 7, 8, 9
 syksy = 10, 11, 12
 
-kuukaudet = ("joulukuu", "tammikuu", "helmikuu", "maaliskuu", "huhtikuu", "toukokuu", "kesäkuu", "heinakuu", "elokuu", "syyskuu", "lokakuu", "marraskuu")
+
 kknro = input("Syötä kuukauden numero 1-12: ") # käyttäjänhän ei tarvitse tietää, että joulukuu = "1"
 kknro = int(kknro)
 # Nyt -> aliohjelma, joka määrittää vuodenajan
+
 vuodenaika()
 
 
