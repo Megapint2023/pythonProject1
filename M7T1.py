@@ -17,6 +17,9 @@ kuukausi = kuukausi[kknro]
 # Nyt tämän printin sijaan tehdään aliohjelma joka,
 # muuttujan "kuukausi[kknro]":n arvon perusteella määrittääja tulostaa vuodenajan
 
+vuodenaika(hae)
+
+
 kevat = 4, 5, 6
 kesa = 7, 8, 9
 syksy = 10, 11, 12
