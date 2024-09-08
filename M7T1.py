@@ -5,55 +5,54 @@
 # Parametri 3kk X4 vuodenaikaa
 # Joulukuu oltava = "1"
 
+#kk = ("joulukuu", "tammikuu", "helmikuu", "maaliskuu", "huhtikuu", "toukokuu", "kesäkuu",
+ #             "heinakuu", "elokuu", "syyskuu", "lokakuu", "marraskuu")
 
 print("Ohjema ilmoittaa kk vastaavan vuodenajan.")
 
+kkinfo = {
+    1: "Joulukuu",
+    2: "Tammikuu",
+    3: "Helmikuu",
+    4: "Maaliskuu",
+    5:   "Huhtikuu",
+    6:   "Toukokuu",
+    7:   "Kesäkuu",
+    8:   "Heinäkuu",
+    9:   "Elokuu",
+    10:  "Syyskuu",
+    11:   "Lokakuu",
+    12:   "Marraskuu",
+}
 
-kk = ("joulukuu", "tammikuu", "helmikuu", "maaliskuu", "huhtikuu", "toukokuu", "kesäkuu",
-              "heinakuu", "elokuu", "syyskuu", "lokakuu", "marraskuu")
+# tällä funktiolla korjaan "koodissa" kk järj
+def kuukausi(kknro):
+    rivi = 1
 
-def kkinfo(i)
-    if kknro = talvi
+    if rivi > 12:
+        rivi = 1
+        print(f"Kk numero {kknro} + 1 on {kkinfo[rivi]}")
+    vuodenaika(kknro)
+        #print("Kk numero " + str(kknro) + "on" + str(kkinfo))
 
-    print("kk [3]")
 
-def vuodenaika(kknro)
+# tässä kerrotaan käyttäjälle vuodenajan lisäksi muut kuukaudet jotka siihen kuuluvat
+def vuodenaika(kknro):
     if kknro = 1 or 2 or 3
-         print ("Tämä on talviaikaa.")
+         print ("Talvikuukaudet ovat: joulukuu, tammikuu ja maaliskuu")
     elif kknro = 4 or 5 or 6
-         print ("Tämä on kevättä.")
+         print ("Kevätkuukaudet ovat: huhtikuu, toukokuu ja kesäkuu")
     elif kknro = 7 or 8 or 9
-         print ("Tämä on kesäaikaa.")
+         print ("Kesäkuukaudet ovat: heinäkuu, elokuu ja syyskuu")
     elif kknro = 10 or 11 or 12
-         print ("Tämä on syksyä.")
-
-#talvi = 1, 2, 3
-#kevat = 4, 5, 6
-#kesa = 7, 8, 9
-#syksy = 10, 11, 12
-
-kkinfo = {"Joulukuu":"talviaika",
-           "Tammikuu":"talviaika",
-           "Helmikuu":"talviaika",
-           "Maaliskuu":"kevätaika",
-             "Huhtikuu":"kevätaika",
-             "Toukokuu":"kevätaika",
-             "Kesäkuu":"kesäaika",
-             "Heinäkuu":"kesäaika",
-             "Elokuu":"kesäaika",
-             "Lokakuu":"talviaika",
-             "Marraskuu":"talviaika",
-             }
-vuodenaika()
-
-
+         print ("Syksykuukaudet ovat: joulukuu, tammikuu ja maaliskuu")
+         break
 
 kknro = input("Syötä kuukauden numero 1-12: ") # käyttäjänhän ei tarvitse tietää, että joulukuu = "1"
 kknro = int(kknro)
-# Nyt -> aliohjelma, joka määrittää vuodenajan
 
-kkinfo()
-
+kkinfo(kknro)
+vuodenaika(kknro)
 
 
 
