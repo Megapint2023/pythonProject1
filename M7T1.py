@@ -8,45 +8,28 @@
 
 print("Ohjema ilmoittaa kk vastaavan vuodenajan.")
 
-kk = ("joulukuu", "tammikuu", "helmikuu", "maaliskuu", "huhtikuu", "toukokuu", "kesäkuu",
-              "heinakuu", "elokuu", "syyskuu", "lokakuu", "marraskuu")
-("talviaika", "talviaika", "talviaika", "talviaika", "kevataika", "kevataika", "kevataika",
- "kevataika", "kesäaika", "kesäaika", "kesäaika", "kesäaika", "syksyaika", "syksyaika", "syksyaika", "syksyaika" ) = hedelmät
+kkinfo = {"Joulukuu":"talviaika",
+           "Tammikuu":"talviaika",
+           "Helmikuu":"talviaika",
+           "Maaliskuu":"kevätaika",
+             "Huhtikuu":"kevätaika",
+             "Toukokuu":"kevätaika",
+             "Kesäkuu":"kesäaika",
+             "Heinäkuu":"kesäaika",
+             "Elokuu":"kesäaika",
+             "Lokakuu":"talviaika",
+             "Marraskuu":"talviaika",
+             }
 
-kuukaudet = {"Viivi":"050-1234567",
-           "Ahmed":"040-1112223",
-           "Pekka":"050-7654321"}
-
-numerot["Olga"] = "050-1011012"
-numerot["Mary"] = "0401-2132139"
-
-print (numerot)
-
-nimi = input("Anna nimi: ")
-if nimi in numerot:
-    print (f"Henkilön {nimi} puhelinnumero on {numerot[nimi]}.")
-
-def ali2()
-    if kk = talvi
-    print("kk taulukosta siihen vuodenaikaan kuuluvat kk:det")
-
-def vuodenajat(kknro)
+def vuodenaika(kknro)
     if kknro = 1 or 2 or 3
-        kknro = talvi
+         print ("Syötetty kk ja vuodenaika ovat: ")
     elif kknro = 4 or 5 or 6
-         kknro = kevat
+         print ("Syötetty kk ja vuodenaika ovat: ")
     elif kknro = 7 or 8 or 9
-         kknro = kesa
-        print ("Kesä beibe!")
+         print ("Syötetty kk ja vuodenaika ovat: ")
     elif kknro = 10 or 11 or 12
-         kknro = kevät
-        print ("kevät")
-
-talvi = 1, 2, 3
-kevat = 4, 5, 6
-kesa = 7, 8, 9
-syksy = 10, 11, 12
-
+         print ("Syötetty kk ja vuodenaika ovat: ")
 
 kknro = input("Syötä kuukauden numero 1-12: ") # käyttäjänhän ei tarvitse tietää, että joulukuu = "1"
 kknro = int(kknro)
@@ -56,3 +39,16 @@ vuodenaika()
 
 
 
+
+#kk1 = ("joulukuu", "tammikuu", "helmikuu", "maaliskuu", "huhtikuu", "toukokuu", "kesäkuu",
+              "heinakuu", "elokuu", "syyskuu", "lokakuu", "marraskuu")
+def ali2()
+    if kknro = talvi
+
+    print("kk [3]")
+
+
+talvi = 1, 2, 3
+kevat = 4, 5, 6
+kesa = 7, 8, 9
+syksy = 10, 11, 12
