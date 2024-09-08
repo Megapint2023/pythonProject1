@@ -9,6 +9,11 @@
 
 print("Ohjema ilmoittaa kk vastaavan vuodenajan.")
 
+
+hedelmät = ("joulukuu", "tammikuu", "helmikuu", "maaliskuu", "huhtikuu", "toukokuu", "kesäkuu", "heinakuu", "elokuu", "syyskuu", "lokakuu", "marraskuu")
+(kevat, kesa, syksi, talvu) = hedelmät
+print (f"Hedelmiä ovat {kevat}, {kesa}, {syksy} {talvi}.")
+
 kuukausi = ("joulukuu", "tammikuu", "helmikuu", "maaliskuu", "huhtikuu", "toukokuu", "kesäkuu", "heinakuu", "elokuu", "syyskuu", "lokakuu", "marraskuu")
 kknro = input("Syötä kuukauden numero 1-12: ")
 kknro = int(kknro)
