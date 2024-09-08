@@ -46,3 +46,4 @@ print (f"Luotien massa on: + {luoti:10.1f}" + "g")
 kilograms = int(total // 1000)
 grams = total % 1000
 print(f"Massa yht on: {kilograms} kg ja {grams:.1f}g")
+

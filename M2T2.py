@@ -10,3 +10,4 @@ sade = float (input("Syötä säde arvo: "))
 ala = 3.14159 * sade * sade
 
 print (ala)
+

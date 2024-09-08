@@ -16,3 +16,4 @@ area = length * width
 
 print ("Suorakulmion piiri: " + str(perimeter))
 print ("Suorakulmion pinta-ala: " + str(area))
+
