@@ -121,7 +121,6 @@ print ("[1] = LENTOKENTTÄHAKU [ICAO-koodi]")
 print ("[2] = LISÄÄ PUUUTTUVA LENTOKENTTÄ")
 print ("[ENTER] = LOPETA OHJELMA")
 
-ali1 ()
 
 while True:
     valinta = input("Syötä valinta:")
@@ -130,19 +129,37 @@ while True:
         print ("Ohjelma loppu.")
         break
 
-    if valinta == "1":
+    valinta = int(valinta)
+
+    if valinta == 1:
          valinta = ohjelma1
          print ("Ohjelma1: Hae lentoaseman tiedot. Tarvitset ICAO-koodilla:")
 
-    elif valinta == "2":
+    elif valinta == 2:
          valinta = ohjelma2
          print("Ohjelma2: Uuden lentoaseman määrittäminen:")
     else:
          print("Virheellinen valinta! Syötä luku 1, 2 tai paina enter.")
 
-aliyks (ohjelma1)
+
+
+def ohjelma1(lennot):
+    rivi = lennot + 1
+    if rivi > 0:
+        rivi = 1
+    print(f"KAUUKAUSI: {lennot[rivi]}")
+    vuodenaika(kknro)
 # Tarvitaan ohjelma joka kysyy käyttäjältä yhden ICAO koodin
 # ja skannaa  kirjaston läpi ja printtaa vastaaavan arvon
 
+print ("Ohjelma vertaa kummasta pizzasta sait enemmän vastinetta rahoillesi.")
 
+d1 = input("Syötä ensimmäisen pizzan halkaisija senttimetreinä: ")
+d1 = float(d1)
+hinta1 = input("Syötä ensimmäisen pizzan hinta: ")
+hinta1 = float(hinta1)
+d2 = input("Syötä toisen pizzan halkaisija senttimetreinä: ")
+d2 = float(d2)
+hinta2 = input("Syötä toisen pizzan hinta: ")
+hinta2 = float(hinta2)
 
