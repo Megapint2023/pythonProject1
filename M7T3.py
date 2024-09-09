@@ -132,23 +132,27 @@ while True:
     valinta = int(valinta)
 
     if valinta == 1:
-         valinta = ohjelma1
+         haku = valinta
          print ("Ohjelma1: Hae lentoaseman tiedot. Tarvitset ICAO-koodilla:")
 
     elif valinta == 2:
-         valinta = ohjelma2
+         haku = valinta
          print("Ohjelma2: Uuden lentoaseman määrittäminen:")
     else:
          print("Virheellinen valinta! Syötä luku 1, 2 tai paina enter.")
 
 
-
-def ohjelma1(lennot):
-    rivi = lennot + 1
-    if rivi > 0:
-        rivi = 1
+# need aliohjelma to ask for ICAO
+def ohjelma1(haku):
+    hae = str(input("Syötä ICAO (eshaem. EFHK):"))
+    # how do i make loop snat lennot? and print value opposite from it? ... i dont fucking know
+    hae = lennot + 1
+    haef hae > 0:
+        hae = hae +1
     print(f"KAUUKAUSI: {lennot[rivi]}")
     vuodenaika(kknro)
+
+
 # Tarvitaan ohjelma joka kysyy käyttäjältä yhden ICAO koodin
 # ja skannaa  kirjaston läpi ja printtaa vastaaavan arvon
 
