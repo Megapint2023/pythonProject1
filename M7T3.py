@@ -1,14 +1,14 @@
-# OHJELMA - LENTOKENTTÄHAKU TAI ASEMAN LISÄYS
-# Käyttäjä navigoi kysymyksillä ja siksi voi lopettaa ohjelman koska tahansta painamalla pelkästään enter.
+# OHJELMA - TIEDONHAKU JA LISÄÄMINEN
+# Käyttäjä navigoi kysymyksillä ja voi lopettaa ohjelman koska tahansta painamalla enter.
 
-# Ensin käyttäjä saa monivalinta kysymyksen ja sen jälkeen käytännössä 2 pyörivää looppia.
+# käyttäjä saa valita toiminnon monivalinnalla.
 # Loop 1 hakee tietoa valmiista listasta ja Loop 2 tallettaa siihen tietoa.
 # Teen kirjasto 'dictionary' listan
 
 # OHJELMA1: Kysyy pelkkiä ICAO- koodeja - lopetus [enter].
 # OHJELMA2: Kysyy Kaupungin nimen + ICAO-koodin ja lisää sen listaan.
 
-#Teht ilmeisesti idea itse luoda lista jota hyödyntäen homma toimii. (ei DB:tä täs vaihees vielä?)
+#Teht ilmeisesti idea itse luoda lista jonka kautta toimii?
 # (ICAO-koodi on lentoaseman yksilöivä tunniste. Helsinki-Vantaan lentoaseman ICAO-koodi on EFHK.
 
 lennot = {
@@ -119,9 +119,9 @@ lennot = {
 # HAUT
 def aliyks():
     while True:
-        icao = input("Syötä nelikirjaiminen ICAO-koodi -> esim 'EFHK':")
+        icao = input("Syötä nelikirjaiminen ICAO:")
         if icao == "":
-            print("Virheellinen koodi. Yritä uudelleen...")
+            print("Virheellinen koodi. Ohjelma loppu")
             break
         if icao in lennot:
             print(f"{icao} {lennot[icao]}")
@@ -132,7 +132,7 @@ def aliyks():
 # LISÄÄMINEN
 def alikaks():
     while True:
-        koodi = input("Syötä uuden kaupungin ICAO-koodi: ")
+        koodi = input("Syötä uuden kaupungin ICAO: ")
         if koodi == "":
             print("Ohjelma loppu.")
             break
@@ -170,23 +170,8 @@ while True:
          print("Virheellinen valinta! Syötä luku 1, 2 tai paina enter.")
 
 
-         # how do i make loop snat lennot? and print value opposite from it? ... i dont fucking know
-           # basicly i need a code which will identify the ICAO on "rivi" and print it + -> opposite side
-           # for scanning lthe list oop is also needed.
-
-
-
 # Tarvitaan ohjelma joka kysyy käyttäjältä yhden ICAO koodin
-# ja skannaa  kirjaston läpi ja printtaa vastaaavan arvon
+# ja skannaa  kirjaston läpi ja printtaa vastakkaisen arvon
 
-print ("Ohjelma vertaa kummasta pizzasta sait enemmän vastinetta rahoillesi.")
 
-d1 = input("Syötä ensimmäisen pizzan halkaisija senttimetreinä: ")
-d1 = float(d1)
-hinta1 = input("Syötä ensimmäisen pizzan hinta: ")
-hinta1 = float(hinta1)
-d2 = input("Syötä toisen pizzan halkaisija senttimetreinä: ")
-d2 = float(d2)
-hinta2 = input("Syötä toisen pizzan hinta: ")
-hinta2 = float(hinta2)
 
