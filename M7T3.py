@@ -136,21 +136,31 @@ while True:
          print ("Ohjelma1: Hae lentoaseman tiedot. Tarvitset ICAO-koodilla:")
 
     elif valinta == 2:
-         haku = valinta
+         lisa = valinta
          print("Ohjelma2: Uuden lentoaseman määrittäminen:")
     else:
          print("Virheellinen valinta! Syötä luku 1, 2 tai paina enter.")
 
 
-# need aliohjelma to ask for ICAO
+         # how do i make loop snat lennot? and print value opposite from it? ... i dont fucking know
+           # basicly i need a code which will identify the ICAO on "rivi" and print it + -> opposite side
+           # for scanning lthe list oop is also needed.
+
 def ohjelma1(haku):
-    hae = str(input("Syötä ICAO (eshaem. EFHK):"))
-    # how do i make loop snat lennot? and print value opposite from it? ... i dont fucking know
-    hae = lennot + 1
-    haef hae > 0:
-        hae = hae +1
-    print(f"KAUUKAUSI: {lennot[rivi]}")
-    vuodenaika(kknro)
+    while True:
+        icao = input("Syötä nelikirjaiminen ICAO-koodi -> esim 'EFHK':")
+        if icao == "":
+            print("Virheellinen koodi. Yritä uudelleen...")
+            break
+        if icao in lennot:
+            print print(f"KAUUKAUSI: {lennot[rivi]}")
+
+
+           hae = lennot + 1
+           haef hae > 0:
+               hae = hae +1
+
+           vuodenaika(kknro)
 
 
 # Tarvitaan ohjelma joka kysyy käyttäjältä yhden ICAO koodin
