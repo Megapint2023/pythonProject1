@@ -10,38 +10,35 @@
 # Tallentaa tietoa kuten muutkin listat listat, mutta
 
 
-allnimet = {"" : ""}
-nimet = set()
-nimet.add("Viivi")
-print(nimet)
+ jemma = set()
 
-nimi = input("Lisää uusi nimi: (lopeta painamalla 'enter': :")
+ while True:
+     nimi = input("Lisää uusi nimi: (lopeta painamalla 'enter':")
+     if nimi == "":
+        break
+     if nimi in jemma:
+         print(f"Virhe! {nimi} löytyy jo!  .")
+     else:
+         jemma.add(nimi)
+         print(f"Uusi nimi: -{nimi}-->  nimi lisätty jemmaan!")
+
+print(jemma)
 
 
-if nimi in allnimet:
-    print(f"Henkilö{nimi}") {puhelinnumero[]}
-else nimi = allnimet +1+
 
-
-
-for i in nimiaukko:  # python automaattisesti menee numerolistan läpi
-    summa = summa + i
-    print("- " + str(i))
-return summa
-
-minisetti = {"nimi1", "nimi2", "nimi3"}
-print(minisetti)
-
-minisetti.add("Dominion")
-print(minisetti)
-
-minisetti.remove("Shakki")
-print(minisetti)
-
-minisetti.add("Cluedo")
-print(minisetti)
-
-for p in minisetti:
-    print(p)
-
+#minisetti = {"nimi1", "nimi2", "nimi3"}
+#print(minisetti)
+#
+#minisetti.add("Dominion")
+#print(minisetti)
+#
+#minisetti.remove("Shakki")
+#print(minisetti)
+#
+#minisetti.add("Cluedo")
+#print(minisetti)
+#
+#for p in minisetti:
+#    print(p)
+#
 
