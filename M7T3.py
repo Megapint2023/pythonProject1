@@ -116,9 +116,23 @@ lennot = {
     "OOMS": "Muscat"
 }
 
-print ("OHJELMA: VALITSE TOIMINTO")
-print ("[1] = LENTOKENTTÄHAKU [ICAO-koodi]")
-print ("[2] = LISÄÄ PUUUTTUVA LENTOKENTTÄ")
+
+def aliyks():
+    while True:
+        icao = input("Syötä nelikirjaiminen ICAO-koodi -> esim 'EFHK':")
+        if icao == "":
+            print("Virheellinen koodi. Yritä uudelleen...")
+            break
+        if icao in lennot:
+            print(f"{icao} {lennot[icao]}")
+        else:
+            print(f"Kyseiseklä koodilla: {icao} ei löytynyt tietoja.")
+
+
+
+print ("OHJELMA1: VALITSE TOIMINTO:")
+print ("[1] = HAE LENTOKENTÄN TIEDOT: ICAO-koodilla")
+print ("[2] = LISÄÄ UUSI LENTOKENTTÄ")
 print ("[ENTER] = LOPETA OHJELMA")
 
 
@@ -132,12 +146,13 @@ while True:
     valinta = int(valinta)
 
     if valinta == 1:
-         haku = valinta
-         print ("Ohjelma1: Hae lentoaseman tiedot. Tarvitset ICAO-koodilla:")
+         print("Ohjelma1: Hae haluamasi lentokentän tiedont sen ICAO-koodillaa:")
+         aliyks()
 
     elif valinta == 2:
-         lisa = valinta
          print("Ohjelma2: Uuden lentoaseman määrittäminen:")
+         alikaks()
+
     else:
          print("Virheellinen valinta! Syötä luku 1, 2 tai paina enter.")
 
@@ -146,21 +161,11 @@ while True:
            # basicly i need a code which will identify the ICAO on "rivi" and print it + -> opposite side
            # for scanning lthe list oop is also needed.
 
-def ohjelma1(haku):
-    while True:
-        icao = input("Syötä nelikirjaiminen ICAO-koodi -> esim 'EFHK':")
-        if icao == "":
-            print("Virheellinen koodi. Yritä uudelleen...")
-            break
-        if icao in lennot:
-            print print(f"KAUUKAUSI: {lennot[rivi]}")
 
 
-           hae = lennot + 1
-           haef hae > 0:
-               hae = hae +1
 
-           vuodenaika(kknro)
+
+
 
 
 # Tarvitaan ohjelma joka kysyy käyttäjältä yhden ICAO koodin
