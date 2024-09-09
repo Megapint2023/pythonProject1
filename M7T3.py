@@ -116,7 +116,7 @@ lennot = {
     "OOMS": "Muscat"
 }
 
-
+# HAUT
 def aliyks():
     while True:
         icao = input("Syötä nelikirjaiminen ICAO-koodi -> esim 'EFHK':")
@@ -128,6 +128,19 @@ def aliyks():
         else:
             print(f"Kyseiseklä koodilla: {icao} ei löytynyt tietoja.")
 
+
+# LISÄÄMINEN
+def alikaks():
+    while True:
+        koodi = input("Syötä uuden kaupungin ICAO-koodi: ")
+        if koodi == "":
+            print("Ohjelma loppu.")
+            break
+
+        if koodi in lennot:
+            print (f" Koodi: {koodi} löytyy jo. ")
+        else:
+            kaupunki = input("SSyötä uusi kaupunki: ")
 
 
 print ("OHJELMA1: VALITSE TOIMINTO:")
@@ -146,11 +159,11 @@ while True:
     valinta = int(valinta)
 
     if valinta == 1:
-         print("Ohjelma1: Hae haluamasi lentokentän tiedont sen ICAO-koodillaa:")
+         print("Ohjelma1: Hae haluamasi lentokentän tiedont ICAO-koodillaa:")
          aliyks()
 
     elif valinta == 2:
-         print("Ohjelma2: Uuden lentoaseman määrittäminen:")
+         print("Ohjelma2: Lisää uusia Kaupunkeja ICAO koodin avulla:")
          alikaks()
 
     else:
@@ -160,11 +173,6 @@ while True:
          # how do i make loop snat lennot? and print value opposite from it? ... i dont fucking know
            # basicly i need a code which will identify the ICAO on "rivi" and print it + -> opposite side
            # for scanning lthe list oop is also needed.
-
-
-
-
-
 
 
 
