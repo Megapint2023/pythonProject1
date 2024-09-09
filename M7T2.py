@@ -7,20 +7,21 @@
 
 #joukkotietorakenne
 # Python: "set" =
-# Tallentaa tietoa kuten muutkin listat listat, mutta
+# Set kerää tiedon, muttei luokittele sitä ja hyväksyy vain uniikin arvon.
 
 
- jemma = set()
+jemma = set()
 
- while True:
-     nimi = input("Lisää uusi nimi: (lopeta painamalla 'enter':")
+while True:
+     nimi = input("Lisää nimi:")
      if nimi == "":
         break
      if nimi in jemma:
          print(f"Virhe! {nimi} löytyy jo!  .")
+         break
      else:
          jemma.add(nimi)
-         print(f"Uusi nimi: -{nimi}-->  nimi lisätty jemmaan!")
+         print(f"Uusi nimi: *{nimi}*  -->  lisätty!")
 
 print(jemma)
 
