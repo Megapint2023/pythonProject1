@@ -11,7 +11,11 @@
 # Esimerkiksi Helsinki-Vantaan lentoaseman ICAO-koodi on EFHK. Löydät koodeja helposti selaimen avulla.)
 
 # -> Eli inputin sijaan tarttee jonkun monivalinta systeemin?...
-("VALITSE SEURAAAVISTA:   LENTOKENTTÄHAKU, PAINA 1. TAI LISÄÄ PUUTTUVA LENTOKENTTÄ -> PAINA 2 ")
+
+print ("OHJELMA: VALITSE TOIMINTO")
+print ("[1] = LENTOKENTTÄHAKU [ICAO-koodi]")
+print ("[2] = LISÄÄ PUUUTTUVA LENTOKENTTÄ")
+print ("[ENTER] = LOPETA OHJELMA")
 
 
 # Get Flight info
@@ -23,4 +27,4 @@
 #3. Lopeta Ohjelma -> ENTER.
 
 # Lisää puuttuva lentokenttäkoodi:
-airport = input("Valintse toiminto: Lentokettähaku -> paina 'H'.  ")
+
