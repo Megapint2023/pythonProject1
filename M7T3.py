@@ -169,9 +169,3 @@ while True:
     else:
          print("Virheellinen valinta! Syötä luku 1, 2 tai paina enter.")
 
-
-# Tarvitaan ohjelma joka kysyy käyttäjältä yhden ICAO koodin
-# ja skannaa  kirjaston läpi ja printtaa vastakkaisen arvon
-
-
-
