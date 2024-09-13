@@ -23,7 +23,7 @@ def hae_tiedot(icao):
     tulos = kursori.fetchall()
     if kursori.rowcount >0 :
         for rivi in tulos:
-            print(f"KAUPUNKI: {rivi[0]}, KUNTA: {rivi[1]}") # print(f"Lentokentän tiedot:  {rivi[2]} {rivi[1]} ja  {rivi[3]}")
+            print(f"KAUPUNKI: {rivi[0]}, KUNTA: {rivi[1]}")
     else:
         print("Kyseisellä ICAO-koodilla ei löytynyt tietoja.")
     kursori.close()
