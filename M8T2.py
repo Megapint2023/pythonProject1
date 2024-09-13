@@ -14,19 +14,19 @@ yhteys = mysql.connector.connect(
          autocommit=True
          )
 
-def hae_tiedot(icao):
-    sql = f"SELECT name, municipality FROM airport WHERE ident = '{icao}'"
+def hae_tiedot(iso_country):
+    sql = f"SELECT name, type FROM airport WHERE iso_country = '{iso_country}'" # viilaa
     print(sql)
     kursori = yhteys.cursor()
     kursori.execute(sql)
     tulos = kursori.fetchall()
     if kursori.rowcount >0 :
         for rivi in tulos:
-            print(f"KAUPUNKI: {rivi[0]}, KUNTA: {rivi[1]}")
+            print(f"LENTOKENTTÄ: {rivi[0]}, TYYPPI: {rivi[1]}") # selvitä miten saa kaikki tuloksen rivit sekä miten "laskutoimitus"
     else:
-        print("Kyseisellä ICAO-koodilla ei löytynyt tietoja.")
+        print("Kyseisellä maakoodilla ei löytynyt tietoja.")
     kursori.close()
 
-print ("Ohjelma hakee ICAO-koodilla lentokentän tiedot.")
-icao = input(str("ICAO koodi:"))
-hae_tiedot(icao)
+print ("Ohjelma etsii maakoodilla kaikki sen lentokentät (esim. FI).")
+iso_country = input(str("Syötä maakoodi:"))
+hae_tiedot(iso_country)
