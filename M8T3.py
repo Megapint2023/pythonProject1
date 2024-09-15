@@ -7,7 +7,7 @@
 
 
 import mysql.connector
-# from collections import Counter # LISÄTTY. Python moduuli joka tehty erinäisen datan laskemiseen.
+from geopy.distance import distance
 yhteys = mysql.connector.connect(
          host='127.0.0.1',
          port= 3306,
@@ -18,19 +18,26 @@ yhteys = mysql.connector.connect(
          )
 
 def calculate_distance(icao1, icao2):
-    sql = f"SELECT latitude_deg, longtitude_deg FROM aiport WHERE ident = '{icao1, icao2}'"
-    print(sql)
+    sql = f"SELECT latitude_deg, longitude_deg FROM airport WHERE ident IN ('{icao1}', '{icao2}')"
+   # print(sql)
     kursori = yhteys.cursor()
     kursori.execute(sql)
+    tulos = kursori.fetchall()
 
+    if len(tulos) != 2:
+        print("Virhe, yhtä tai molempiä kenttiä ei löytynyt.")
+        return
 
+    lat1, lon1 = tulos[0]
+    lat2, lon2 = tulos[1]
+    icao1_coords = (lat1, lon1)
+    icao2_coords = (lat2, lon2)
+    etaisyys = distance(icao1_coords, icao2_coords).kilometers
 
-
-
-print()
+    print(f"Etäisyys {icao1} ja {icao2} välillä on {etaisyys:.2f} kilometriä.")
 
 print ("Ohjelma laskee kahden lentokentän etäisyyden ICAO koodien aculla.")
-icao1 = input("Syötä ensimmäisen kentän ICAO:")
-icao2 = input("Syötä toisen kentän ICAO:")
+icao1 = input("Syötä ensimmäinen ICAO:")
+icao2 = input("Syötä toinen ICAO:")
 
-calculate_distance()
+calculate_distance(icao1, icao2)
