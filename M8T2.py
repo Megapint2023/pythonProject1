@@ -24,7 +24,10 @@ def hae_tiedot(iso_country):
     tulos = kursori.fetchall()
     # if kursori.rowcount >0 :  -> else: lopussa ajaa samaa kuin tämä rivi
     if tulos:
-        tyypit = Counter() # LISÄTTY -> tavallinen functio laskisi vaan yhteen kaikki tyypit. Counter taas on sisäänrakennettu functio, joka osaa myös erottamaa eri tyyppien tosistaan ja laskee ne erikseen
+        tyypit = Counter() # LISÄTTY -> tavallinen functio laskisi vaan yhteen kaikki tyypit.
+        # Counter taas on sisäänrakennettu functio, joka osaa myös erottamaa eri tyyppien tosistaan
+        # ja laskee ne erillisinä samaan tapaan kuten kirjastolista. Eli sillä on "dictionary" tyyppinen rakenne,
+        # jossa eri tyyppi on eri "KEY".
         for rivi in tulos: #looppi printtaa kaikki kentät. Samalla rivillä tiedot: nimi + tyyppi
             print(f"LENTOKENTTÄ: {rivi[0]}, TYYPPI: {rivi[1]}")
             tyypit[rivi[1]] += 1 # laskuri -> kpl määrät
