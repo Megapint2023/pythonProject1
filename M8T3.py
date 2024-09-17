@@ -28,11 +28,12 @@ def calculate_distance(icao1, icao2):
         print("Virhe, yhtä tai molempiä kenttiä ei löytynyt.")
         return
 
-    lat1, lon1 = tulos[0]
-    lat2, lon2 = tulos[1]
-    icao1_coords = (lat1, lon1)
-    icao2_coords = (lat2, lon2)
-    etaisyys = distance(icao1_coords, icao2_coords).kilometers
+    #lat1, lon1 = tulos[0]
+    #lat2, lon2 = tulos[1]
+    #icao1_coords = (lat1, lon1)
+    #icao2_coords = (lat2, lon2)
+    # etaisyys = distance(icao1_coords, icao2_coords).kilometers
+    etaisyys = distance(tulos[0], tulos[1]).kilometers
 
     print(f"Etäisyys {icao1} ja {icao2} välillä on {etaisyys:.2f} kilometriä.")
 
