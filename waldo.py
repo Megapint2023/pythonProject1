@@ -23,7 +23,9 @@
 # - Pelaaja saapuu automaattisesti syöttämänsä maan päälentokentälle
 
 import mysql.connector
-from geopy.distance import distance
+from geopy.distance import geodesic
+import random
+
 yhteys = mysql.connector.connect(
          host='127.0.0.1',
          port= 3306,
@@ -33,9 +35,20 @@ yhteys = mysql.connector.connect(
          autocommit=True
          )
 
-def aloita_peli(pelaaja):
-    location = FI
-    new_location = input("Syötä matkustusmaa: ")
+def aloita_peli():
+    print("PRINT TAUSTATARINA TJPS")
+    print("PRINT TARKOITUS esim. Löydä matkalaukku niin ja näin.")
+    print("PRINT OHJEISTUS MITEN MATKUSTAA / SIIRTYY")
+    pelaaja = input("SYÖTÄ PELAAJAN NIMI: ")
+    location = "EFHK"
+    print (f"Olet lentokentälklä: + {location}")
+    matkalaukku = arvo_laukku_sijainti()
+
+    total_kilometrit = 0
+    vihje_counter = 0
+
+    while True:
+
 
 def calculate_distance(info1, info2):
     sql = f"SELECT info FROM table WHERE data IN jotain ('{info1}', '{info2}')"
@@ -51,10 +64,8 @@ def calculate_distance(info1, info2):
 
     print(f"Etäisyys {icao1} ja {icao2} välillä on {etaisyys:.2f} kilometriä.")
 
-print ("PRINT PELIOHJEET")
-print ("PRINT MAHDOLLIET KOMENNOT")
-print ("PRINT VIHJE AVAUTUNUT X YRITYKSEN PÄÄSTÄ")
-pelaaja = input("SYÖTÄ PELAAJAN NIMI: ")
 
-start(aloita_peli(pelaaja))
+
+
+aloita_peli()
 
