@@ -18,6 +18,43 @@
 # - VIHJE LASKURIN PÄIVITTYMINEN
 # - KYSY PELAAJALTA UUSI MATKUSTUSMAA
 
+# STEP 3
+# - Luo kirjasto jossa vain sallitut matkustusmaat (eurooppa)
+# - Pelaaja saapuu automaattisesti syöttämänsä maan päälentokentälle
 
+import mysql.connector
+from geopy.distance import distance
+yhteys = mysql.connector.connect(
+         host='127.0.0.1',
+         port= 3306,
+         database='flight_game',
+         user='megapint',
+         password='wine',
+         autocommit=True
+         )
 
+def aloita_peli(pelaaja):
+    location = FI
+    new_location = input("Syötä matkustusmaa: ")
+
+def calculate_distance(info1, info2):
+    sql = f"SELECT info FROM table WHERE data IN jotain ('{info1}', '{info2}')"
+    kursori = yhteys.cursor()
+    kursori.execute(sql)
+    tulos = kursori.fetchall()
+
+    if len(tulos) != mitä ei pitäisi olla:
+        print("VIRHEILMOITUS")
+        return
+
+    etaisyys = distance(tulos[0], tulos[1]).kilometers
+
+    print(f"Etäisyys {icao1} ja {icao2} välillä on {etaisyys:.2f} kilometriä.")
+
+print ("PRINT PELIOHJEET")
+print ("PRINT MAHDOLLIET KOMENNOT")
+print ("PRINT VIHJE AVAUTUNUT X YRITYKSEN PÄÄSTÄ")
+pelaaja = input("SYÖTÄ PELAAJAN NIMI: ")
+
+start(aloita_peli(pelaaja))
 
