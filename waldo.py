@@ -35,37 +35,26 @@ yhteys = mysql.connector.connect(
          autocommit=True
          )
 
+#  PELINALUSTUS
 def aloita_peli():
     print("PRINT TAUSTATARINA TJPS")
     print("PRINT TARKOITUS esim. Löydä matkalaukku niin ja näin.")
     print("PRINT OHJEISTUS MITEN MATKUSTAA / SIIRTYY")
     pelaaja = input("SYÖTÄ PELAAJAN NIMI: ")
-    location = "EFHK"
-    print (f"Olet lentokentälklä: + {location}")
-    matkalaukku = arvo_laukku_sijainti()
-
+    current_location = "EFHK"
+    print (f"Olet lentokentälklä: + {current_location}")
+    matkalaukun_sijainti = random_sijainti()
+    # MÄÄRITETÄÄN KM LASKURI
     total_kilometrit = 0
+    # MÄÄRITETÄÄN VIHJE LASKURI
     vihje_counter = 0
 
-    while True:
-
-
-def calculate_distance(info1, info2):
-    sql = f"SELECT info FROM table WHERE data IN jotain ('{info1}', '{info2}')"
-    kursori = yhteys.cursor()
-    kursori.execute(sql)
-    tulos = kursori.fetchall()
-
-    if len(tulos) != mitä ei pitäisi olla:
-        print("VIRHEILMOITUS")
-        return
-
-    etaisyys = distance(tulos[0], tulos[1]).kilometers
-
-    print(f"Etäisyys {icao1} ja {icao2} välillä on {etaisyys:.2f} kilometriä.")
-
-
+def rendom_sijainti():
+    pass
 
 
 aloita_peli()
+
+
+
 
