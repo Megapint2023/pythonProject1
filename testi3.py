@@ -1,9 +1,10 @@
-def tervehdi(kerrat):
-    for i in range(kerrat):
-        print ("Hyvää päivää " + str(i+1) + ". kerran")
-    return
+class Koira:
+    def __init__(self, nimi, syntymävuosi, age, info):
+        self.nimi = nimi
+        self.syntymävuosi = syntymävuosi
+        self.age = age
+        self.info = info
 
-print ("Päivä alkaa tervehdyksillä.")
-tervehdi(5)
-print ("Tervehditään lisää.")
-tervehdi(2)
+koira = Koira("Rekku", 2022, 18, "Tuntomerkit: *punainen kaularengas*.")
+
+print (f"{koira.nimi:s} on syntynyt vuonna {koira.syntymävuosi:d}. Hänen ikä on {koira.age:d} vuotta. {koira.info:s}" )
