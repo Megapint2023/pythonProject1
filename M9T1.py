@@ -4,3 +4,4 @@
 # Uuden auton nopeus ja kuljetut matka on asetettava automaattisesti nollaksi.
 # Kirjoita pääohjelma, jossa luot uuden auton (rekisteritunnus ABC-123, huippunopeus 142 km/h).
 # Tulosta pääohjelmassa sen jälkeen luodun auton kaikki ominaisuudet.
+# 19.03.2025

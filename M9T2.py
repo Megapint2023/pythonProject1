@@ -7,3 +7,4 @@
 # Tulosta tämän jälkeen auton nopeus.
 # Tee sitten hätäjarrutus määräämällä nopeuden muutos -200 km/h ja tulosta uusi nopeus.
 # Kuljettua matkaa ei tarvitse vielä päivittää.
+# 19.03.2025

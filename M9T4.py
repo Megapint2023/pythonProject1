@@ -10,3 +10,5 @@
 # Tämä tehdään kutsumalla kulje-metodia.
 #Kilpailu jatkuu, kunnes jokin autoista on edennyt vähintään 10000 kilometriä.
 # Lopuksi tulostetaan kunkin auton kaikki ominaisuudet selkeäksi taulukoksi muotoiltuna.
+
+# 19.03.2025
