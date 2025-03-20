@@ -5,3 +5,10 @@
 # Kirjoita pääohjelma, jossa luot uuden auton (rekisteritunnus ABC-123, huippunopeus 142 km/h).
 # Tulosta pääohjelmassa sen jälkeen luodun auton kaikki ominaisuudet.
 # 19.03.2025
+
+class Auto:
+    def __init__(self, registernum, topspeed, currentspeed, totaldistance):
+        self.registernum = registernum
+        self.topspeed = topspeed
+        self.currentspeed = currentspeed
+        self.totalspeed = totaldistance
