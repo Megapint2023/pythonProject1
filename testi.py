@@ -1,4 +1,17 @@
+#class Koira:
+#    pass
+#
+#koira = Koira()
+#koira.nimi = "Rekku"
+#koira.syntymavuosi = 2022
+#
+#print (f"{koira.nimi:s} on syntynyt vuonna {koira.syntymavuosi:d}.")
 
-sade = float (input("Syötä ympyrän säde:"))
-ala = sade * sade * 3.417
-print(f"Ympyrän pinta-ala on =  + {ala:1.1f}" + " cm")
+class Koira:
+    def __init__(self, nimi, syntymävuosi):
+        self.nimi = nimi
+        self.syntymävuosi = syntymävuosi
+
+koira = Koira("Rekku", 2022)
+
+print (f"{koira.nimi:s} on syntynyt vuonna {koira.syntymävuosi:d}." )
