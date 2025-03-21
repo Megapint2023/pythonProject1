@@ -8,9 +8,11 @@
 # 19.03.2025
 
 class Auto:
-    def __init__(self, registernum, topspeed, currentspeed, totaldistance):
-        self.registernum = registernum
-        self.topspeed = topspeed
-        self.currentspeed = currentspeed
-        self.totalspeed = totaldistance
+    def __init__(self, rekisteri, huippunopeus):
+        self.rekisteri = rekisteri
+        self.huippunopeus = huippunopeus
+        self.nopeus = 0
+        self.matka = 0
 
+auto = Auto("ABC", 123)
+print (f"{auto.rekisteri:s} {auto.huippunopeus:s} {auto.nopeus:d} {auto.matka:d}")
