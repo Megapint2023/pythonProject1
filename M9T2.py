@@ -17,11 +17,18 @@ class Auto: # tämä class
         self.nopeus = 0
         self.matka = 0
 
-    def kiihdytys(self, nopeusnyt):
-        for i in range(nopeusnyt):
-            print(self.nopeusnyt)
-        return
+    def kiihdytys(self):
+        for i in range(10):
+            self.nopeus += 10
+            if self.nopeus > self.huippunopeus:
+                self.nopeus = self.huippunopeus
+            elif self.nopeus < 0:
+                self.nopeus = 0
+            print(f"Nopeus: {self.nopeus} km/h")
 
 auto = Auto("ABC-123", 142) # tämä on olio/object
+print (f"Auton tiedot -> Rekisterinumero: {auto.rekisteri}, Huippunopeus {auto.huippunopeus} km/h, Nopeus nyt: {auto.nopeus} km/h.")  # olien ominaisuuksien tulos
 
-print (f"{auto.rekisteri} {auto.huippunopeus:d} {auto.nopeus:d} {auto.matka:d}")  # olien ominaisuuksien tulos
+print (f"Auto kiihdyttää...")
+for i in range(3):
+    auto.kiihdytys()
