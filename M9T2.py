@@ -37,20 +37,20 @@ print (f"Auton tiedot -> Rekisterinumero: {auto.rekisteri}, Huippunopeus {auto.h
 print (f"Auto kiihdyttää...")
 for i in range(3):
     auto.kiihdytys()
-print(f"Auton nopeus nyt: {auto.nopeus} km/h.")
+print(f"Auton uusi nopeus: {auto.nopeus} km/h.")
 # kiihdytys 2
 print (f"Auto kiihdyttää...")
 for i in range(5):
     auto.kiihdytys()
-print(f"Auton nopeus nyt: {auto.nopeus} km/h.")
+print(f"Auton uusi nopeus: {auto.nopeus} km/h.")
 # kiihdytys 3
 print (f"Auto kiihdyttää...")
 for i in range(7):
     auto.kiihdytys()
-print(f"Auton nopeus nyt: {auto.nopeus} km/h.")
+print(f"Auton uusi nopeus: {auto.nopeus} km/h.")
 
 # Äkkijarrutus!
 print (f"Auto tekee hätäjarrutuksen!")
-for i in range(-20):
+for i in range(20):
     auto.jarrutus()
-print(f"Auton nopeus nyt: {auto.nopeus} km/h.")
+print(f"Auton uusi nopeus: {auto.nopeus} km/h.")
