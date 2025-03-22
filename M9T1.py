@@ -7,12 +7,16 @@
 # Tulosta pääohjelmassa sen jälkeen luodun auton kaikki ominaisuudet.
 # 19.03.2025
 
-class Auto:
-    def __init__(self, rekisteri, huippunopeus):
+# object (olio) / atrtributes (ominaisuudet) / methods (metodit)
+
+class Auto: # tämä class
+    def __init__(self, rekisteri, huippunopeus): # tämä alustaja
+        # ominaisuudet
         self.rekisteri = rekisteri
         self.huippunopeus = huippunopeus
         self.nopeus = 0
         self.matka = 0
 
-auto = Auto("ABC", 123)
-print (f"{auto.rekisteri:s} {auto.huippunopeus:s} {auto.nopeus:d} {auto.matka:d}")
+auto = Auto("ABC", 123) # tämä olio
+
+print (f"{auto.rekisteri:s} {auto.huippunopeus:s} {auto.nopeus:d} {auto.matka:d}")  # olien ominaisuuksien tulos
