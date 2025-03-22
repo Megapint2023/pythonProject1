@@ -25,6 +25,11 @@ class Auto: # tämä class
             self.nopeus = 0
             print(f"Nopeus: {self.nopeus} km/h")
 
+    def jarrutus(self):
+        self.nopeus -= 10
+        if self.nopeus < 0:
+            self.nopeus = 0
+
 auto = Auto("ABC-123", 142) # tämä on olio/object
 print (f"Auton tiedot -> Rekisterinumero: {auto.rekisteri}, Huippunopeus {auto.huippunopeus} km/h, Nopeus nyt: {auto.nopeus} km/h.")  # olien ominaisuuksien tulos
 
@@ -32,15 +37,20 @@ print (f"Auton tiedot -> Rekisterinumero: {auto.rekisteri}, Huippunopeus {auto.h
 print (f"Auto kiihdyttää...")
 for i in range(3):
     auto.kiihdytys()
-print(f"Auton nopeus nyt: {auto.nopeus} km/h")
+print(f"Auton nopeus nyt: {auto.nopeus} km/h.")
 # kiihdytys 2
 print (f"Auto kiihdyttää...")
 for i in range(5):
     auto.kiihdytys()
-print(f"Auton nopeus nyt: {auto.nopeus} km/h")
+print(f"Auton nopeus nyt: {auto.nopeus} km/h.")
 # kiihdytys 3
 print (f"Auto kiihdyttää...")
 for i in range(7):
     auto.kiihdytys()
-print(f"Auton nopeus nyt: {auto.nopeus} km/h")
+print(f"Auton nopeus nyt: {auto.nopeus} km/h.")
 
+# Äkkijarrutus!
+print (f"Auto tekee hätäjarrutuksen!")
+for i in range(-20):
+    auto.jarrutus()
+print(f"Auton nopeus nyt: {auto.nopeus} km/h.")
