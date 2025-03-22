@@ -17,6 +17,6 @@ class Auto: # tämä class
         self.nopeus = 0
         self.matka = 0
 
-auto = Auto("ABC", 123) # tämä olio
+auto = Auto("ABC-123", 142) # tämä on olio/object
 
-print (f"{auto.rekisteri:s} {auto.huippunopeus:s} {auto.nopeus:d} {auto.matka:d}")  # olien ominaisuuksien tulos
+print (f"{auto.rekisteri} {auto.huippunopeus:d} {auto.nopeus:d} {auto.matka:d}")  # olien ominaisuuksien tulos
