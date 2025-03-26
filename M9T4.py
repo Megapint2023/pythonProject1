@@ -12,3 +12,11 @@
 # Lopuksi tulostetaan kunkin auton kaikki ominaisuudet selkeäksi taulukoksi muotoiltuna.
 
 # 19.03.2025
+
+class Auto: # tämä class
+    def __init__(self, rekisteri, huippunopeus): # tämä alustaja
+        # ominaisuudet
+        self.rekisteri = rekisteri
+        self.huippunopeus = huippunopeus
+        self.nopeus = 60
+        self.matka = 2000
