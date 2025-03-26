@@ -12,22 +12,8 @@ class Auto: # tämä class
         self.nopeus = 60
         self.matka = 2000
 
-    #def kiihdytys(self):
-    #    self.nopeus += 10 # nopeus nousee +10km/h per metodin käyttö
-    #    if self.nopeus > self.huippunopeus: # poikkeus huippunopeuteen saavuttaesssa
-    #        self.nopeus = self.huippunopeus
-    #    elif self.nopeus < 0:
-    #        self.nopeus = 0
-    #        print(f"Nopeus: {self.nopeus} km/h")
-#
-    #def jarrutus(self):
-    #    self.nopeus -= 10
-    #    if self.nopeus < 0:
-    #        self.nopeus = 0
-
-    def kulje(self, matka, aika):
-        self.matka = matka
-        self.aika = aika
+    def kulje(self, aika):
+        self.matka += self.nopeus * aika
 
 auto = Auto("ABC-123", 142) # tämä on olio/object
 print (f"Auton tiedot -> Rekisterinumero: {auto.rekisteri}, Huippunopeus {auto.huippunopeus} km/h, Nopeus nyt: {auto.nopeus} km/h.")  # olien ominaisuuksien tulos
@@ -36,7 +22,9 @@ print (f"Auton kilometrilukema: {auto.matka} km.")
 
 print(f"Auton uusi nopeus: {auto.nopeus} km/h.")
 
-print (f"Matkan jälkeen uusi kilometrilukema on.")
+auto.kulje(1.5)
+
+print (f"Matkan jälkeen uusi kilometrilukema on: {auto.matka} km.")
 
 
 
