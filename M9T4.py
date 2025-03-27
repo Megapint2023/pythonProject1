@@ -47,16 +47,16 @@ def luo_autot():
     return autot
 
 autot = luo_autot()
-kilpailu_jatkuu = False
+kilpailu_jatkuu = True
 aikaa_kulunut = 0
 
-while not kilpailu_jatkuu:
+while kilpailu_jatkuu:
     for auto in autot:
         auto.kiihdytys()
         auto.kulje(1)
 
         if auto.matka >= 10000:
-            kilpailu_jatkuu = True
+            kilpailu_jatkuu = False
             break
 
     aikaa_kulunut += 1
