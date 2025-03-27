@@ -26,8 +26,8 @@ class Auto: # tämä class
 
     def kiihdytys(self):
         muutos = random.randint(-10, 15)
-        self.nopeus += muutos # nopeus nousee +10km/h per metodin käyttö
-        if self.nopeus > self.huippunopeus: # poikkeus huippunopeuteen saavuttaesssa
+        self.nopeus += muutos
+        if self.nopeus > self.huippunopeus:
             self.nopeus = self.huippunopeus
         elif self.nopeus < 0:
             self.nopeus = 0
@@ -37,8 +37,10 @@ class Auto: # tämä class
 
 def luo_autot():
     autot = []
+    merkit = ["Toyota", "Mercedes", "BMW", "Audi", "Ford", "Chevrolet", "Honda", "Nissan", "Porsche", "Volkswagen"]
     for i in range(1, 11):
-        name = f"Car-{i}"
+        name = random.choice(merkit)
+        merkit.remove(name)
         rekisteri = f"ABC-{i}"
         huippunopeus = random.randint(100, 200)
         autot.append(Auto(rekisteri, huippunopeus, name))
@@ -46,7 +48,7 @@ def luo_autot():
 
 autot = luo_autot()
 kilpailu_jatkuu = False
-elapsed_time = 0
+aikaa_kulunut = 0
 
 while not kilpailu_jatkuu:
     for auto in autot:
@@ -57,12 +59,12 @@ while not kilpailu_jatkuu:
             kilpailu_jatkuu = True
             break
 
-    elapsed_time += 1
+    aikaa_kulunut += 1
 
 autot.sort(key=lambda x: x.matka, reverse=True)
 
-print("\n🏁 Race Results 🏁")
-print(f"Total race time: {elapsed_time} hours\n")
-print(f"{'Sijoitus:':<10}{'Auto:':<10}{'Rekisteri:':<12}{'Huippunopeus:':<14}{'Lopullinen nopeus':<18}{'Kuljettu matka:':}")
+print("\n🏁 Sijoitukset! 🏁")
+print(f"Kilpailuun kulunut aika: {aikaa_kulunut} tuntia.\n")
+print(f"{'Sijoitus:':<10}{'Auto:':<13}{'Rekisteri:':<12}{'Huippunopeus:':<14}{'Lopullinen nopeus:':<20}{'Kuljettu matka:':}")
 for index, auto in enumerate(autot, start=1):
-    print(f"{index:<10}{auto.name:<10}{auto.rekisteri:<12}{auto.huippunopeus:<14}{auto.nopeus:<18}{auto.matka:.2f} km")
+    print(f"{index:<10}{auto.name:<13}{auto.rekisteri:<12}{auto.huippunopeus:<14}{auto.nopeus:<20}{auto.matka:.2f} km")
