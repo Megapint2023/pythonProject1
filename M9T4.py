@@ -46,6 +46,7 @@ def luo_autot():
 
 autot = luo_autot()
 kilapilu_jatkuu = False
+elapsed_time = 0
 
 while not kilapilu_jatkuu:
     for auto in autot:
@@ -56,9 +57,12 @@ while not kilapilu_jatkuu:
             kilapilu_jatkuu = True
             break
 
+    elapsed_time += 1
+
 autot.sort(key=lambda x: x.matka, reverse=True)
 
 print("\n🏁 Race Results 🏁")
-print(f"{'Sijoitus:':<10}{'Auto:':<10}{'Rekisteri:':<10}{'Nopeus:':<12}{'Kuljettu matka:'}")
+print(f"Total race time: {elapsed_time} hours\n")
+print(f"{'Sijoitus:':<10}{'Auto:':<10}{'Rekisteri:':<12}{'Huippunopeus:':<14}{'Lopullinen nipeus:<18'}{'Kuljettu matka:'}")
 for index, auto in enumerate(autot, start=1):
-    print(f"{index:<10}{auto.name:<10}{auto.rekisteri:<10}{auto.huippunopeus:<12}{auto.matka:.2f} km")
+    print(f"{index:<10}{auto.name:<10}{auto.rekisteri:<12}{auto.huippunopeus:<14}{auto.nopeus:<18}{auto.matka:.2f} km")
