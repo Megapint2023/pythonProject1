@@ -24,3 +24,4 @@ try:
 
 except requests.exceptions.RequestException as e:
     print ("Hakua ei voitu suorittaa.")
+
