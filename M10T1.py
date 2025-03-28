@@ -20,11 +20,14 @@ class Hissi:
         self.kerros = self.kerros + 1
         if self.kerros >= 5:
             self.kerros = self.ylin
+            print(f"Kerroksessa: {self.kerros}.")
+
 
     def liiku_alas(self):
         self.kerros = self.kerros - 1
         if self.kerros <= 0:
             self.kerros = self.alin
+            print(f"Kerroksessa: {self.kerros}.")
 
     def h(self): #metodi
         # tämän metodi täytyy kutsua liiku_ylos metodia 5 kertaa
