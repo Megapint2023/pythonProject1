@@ -12,8 +12,15 @@
 class Hissi:
     def __init__(self, alin, ylin, kerros):
         self.kerros = kerros
-        self.alin = alin
-        self.ylin = ylin
+        self.ylin = 10
+        self.alin = 0
+
+
+    def h(self):
+        self.kerros = 5
+
+
+
 
     def kerros(self):
         self.kerros = (0, 10)
