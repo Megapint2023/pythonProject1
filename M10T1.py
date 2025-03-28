@@ -10,28 +10,29 @@
 # sen jälkeen takaisin alimpaan kerrokseen.
 
 class Hissi:
-    def __init__(self, alin, ylin, kerros): # alustaja
+    def __init__(self, alin, ylin): # alustaja
         # ominaisuudet
         self.kerros = 0
-        self.ylin = 5
-        self.alin = 0
+        self.ylin = ylin
+        self.alin = alin
 
-    def liiku_ylos(self):
-        self.kerros = self.kerros + 1
-        if self.kerros >= 5:
-            self.kerros = self.ylin
+    def liiku_ylos(self): #metodi
+        if self.kerros < self.ylin:
+            self.kerros += 1
             print(f"Kerroksessa: {self.kerros}.")
 
-
-    def liiku_alas(self):
-        self.kerros = self.kerros - 1
-        if self.kerros <= 0:
-            self.kerros = self.alin
+    def liiku_alas(self): #metodi
+        if self.kerros > self.alin:
+            self.kerros -= 1
             print(f"Kerroksessa: {self.kerros}.")
 
     def h(self): #metodi
-        # tämän metodi täytyy kutsua liiku_ylos metodia 5 kertaa
-        # metodin "h" täytyy siis liikuttaa hissiä viidenteen kerrokseen
+        while self.kerros < self.ylin:
+            self.liiku_ylos()
+        while self.kerros > self.alin:
+            self.liiku_alas()
 
+hissi = Hissi(0, 5)
+hissi.h()
 
 
