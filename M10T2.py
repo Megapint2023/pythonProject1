@@ -15,21 +15,20 @@ class Hissi:
     def liiku_ylos(self): #metodi
         if self.kerros < self.ylin:
             self.kerros += 1
-            print(f"Hissi liikkuu ylöspäin.")
-            print(f"Saapui kerrokseen: {self.kerros}.")
+            print(f"Siirtyy ylöspäin...")
+            print(f"Kerros: {self.kerros}.")
 
     def liiku_alas(self): #metodi
         if self.kerros > self.alin:
             self.kerros -= 1
-            print(f"Hissi liikkuu alaspäin.")
-            print(f"Saapui kerrokseen: {self.kerros}.")
+            print(f"Siirtyy alaspäin.")
+            print(f"Kerros: {self.kerros}.")
 
     def siirry_kerrokseen(self, kohdekerros): #metodi
         while self.kerros < kohdekerros:
             self.liiku_ylos()
         while self.kerros > kohdekerros:
             self.liiku_alas()
-            print(f"Hissi saapui kerrokseen: {self.kerros}.")
 
 class Talo:
     def __init__(self, hissi_määrä, alin, ylin):
@@ -44,7 +43,7 @@ class Talo:
             print(f"Hissi nro. {hissi_nro} lähtee kerrokseen: {kohdekerros}:")
             self.hissit[hissi_nro].siirry_kerrokseen(kohdekerros)
 
-talo = Talo(3, 0, 5)
-talo.aja_hissiä(0, 5)
-talo.aja_hissiä(1, 4)
-talo.aja_hissiä(2, 3)
+talo = Talo(4, 0, 5)
+talo.aja_hissiä(1, 5)
+talo.aja_hissiä(2, 4)
+talo.aja_hissiä(3, 3)
