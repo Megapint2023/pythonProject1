@@ -6,8 +6,8 @@
 # Kirjoita pääohjelmaan lauseet talon luomiseksi ja talon hisseillä ajelemiseksi.
 
 class Hissi:
-    def __init__(self, alin, ylin): # alustaja
-        # ominaisuudet
+    def __init__(self, alin, ylin): # alustaja / constructor
+        # ominaisuudet / properties
         self.kerros = 0
         self.ylin = ylin
         self.alin = alin
@@ -15,20 +15,36 @@ class Hissi:
     def liiku_ylos(self): #metodi
         if self.kerros < self.ylin:
             self.kerros += 1
-            print(f"Hissi liikkui ylöspäin.")
-            print(f"Saavui kerrokseen: {self.kerros}.")
+            print(f"Hissi liikkuu ylöspäin.")
+            print(f"Saapui kerrokseen: {self.kerros}.")
 
     def liiku_alas(self): #metodi
         if self.kerros > self.alin:
             self.kerros -= 1
-            print(f"Hissi liikkui alaspäin.")
-            print(f"Saavui kerrokseen: {self.kerros}.")
+            print(f"Hissi liikkuu alaspäin.")
+            print(f"Saapui kerrokseen: {self.kerros}.")
 
-    def h(self): #metodi
-        while self.kerros < self.ylin:
+    def siirry_kerrokseen(self, kohdekerros): #metodi
+        while self.kerros < kohdekerros:
             self.liiku_ylos()
-        while self.kerros > self.alin:
+        while self.kerros > kohdekerros:
             self.liiku_alas()
 
-hissi = Hissi(0, 5)
-hissi.h()
+class Talo:
+    def __init__(self, hissien_määrä, alin, ylin):
+        self.alin = alin
+        self.ylin = ylin
+        self.hissit = []
+
+        for i in range(hissien_määrä):
+            self.hissit.append(Hissi(alin, ylin))
+
+    def aja_hissiä(self, hissi_nro, kohdekerros):
+        if 0 <= hissi_nro < len(self.hissit):
+            print(f"Hissi nro. {hissi_nro} saapuu kerrokseen: {kohdekerros}:")
+            self.hissit[hissi_nro].siirry_kerrokseen(kohdekerros)
+
+talo = Talo(3, 0, 5)
+talo.aja_hissiä(1, 5)
+talo.aja_hissiä(2, 4)
+talo.aja_hissiä(3, 3)
