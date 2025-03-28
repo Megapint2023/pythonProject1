@@ -29,22 +29,22 @@ class Hissi:
             self.liiku_ylos()
         while self.kerros > kohdekerros:
             self.liiku_alas()
+            print(f"Hissi saapui kerrokseen: {self.kerros}.")
 
 class Talo:
-    def __init__(self, hissien_määrä, alin, ylin):
+    def __init__(self, hissi_määrä, alin, ylin):
         self.alin = alin
         self.ylin = ylin
         self.hissit = []
 
-        for i in range(hissien_määrä):
+        for i in range(hissi_määrä):
             self.hissit.append(Hissi(alin, ylin))
 
     def aja_hissiä(self, hissi_nro, kohdekerros):
-        if 0 <= hissi_nro < len(self.hissit):
-            print(f"Hissi nro. {hissi_nro} saapuu kerrokseen: {kohdekerros}:")
+            print(f"Hissi nro. {hissi_nro} lähtee kerrokseen: {kohdekerros}:")
             self.hissit[hissi_nro].siirry_kerrokseen(kohdekerros)
 
 talo = Talo(3, 0, 5)
-talo.aja_hissiä(1, 5)
-talo.aja_hissiä(2, 4)
-talo.aja_hissiä(3, 3)
+talo.aja_hissiä(0, 5)
+talo.aja_hissiä(1, 4)
+talo.aja_hissiä(2, 3)
