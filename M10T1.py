@@ -18,24 +18,17 @@ class Hissi:
 
     def liiku_ylos(self):
         self.kerros = self.kerros + 1
+        if self.kerros >= 5:
+            self.kerros = self.ylin
+
+    def liiku_alas(self):
+        self.kerros = self.kerros - 1
+        if self.kerros <= 0:
+            self.kerros = self.alin
 
     def h(self): #metodi
-        self.kerros = 5
+        # tämän metodi täytyy kutsua liiku_ylos metodia 5 kertaa
+        # metodin "h" täytyy siis liikuttaa hissiä viidenteen kerrokseen
 
-    def liiku(self):
-        muutos = random.randint(, 15)
-        self.kerros += muutos
-        if self.nopeus > self.huippunopeus:
-            self.nopeus = self.huippunopeus
-        elif self.nopeus < 0:
-            self.nopeus = 0
 
-    def kulje(self, aika):
-        self.matka += self.nopeus * aika
-    def kerros(self):
-        self.kerros = (0, 10)
-        if self.kerros == 5:
-            break
-        elif self.kerros >= 10
-            self.kerros =ylin
 
