@@ -15,12 +15,14 @@ class Hissi:
     def liiku_ylos(self): #metodi
         if self.kerros < self.ylin:
             self.kerros += 1
-            print(f"Saavuit kerrokseen: {self.kerros}.")
+            print(f"Hissi liikkui ylöspäin.")
+            print(f"Saavui kerrokseen: {self.kerros}.")
 
     def liiku_alas(self): #metodi
         if self.kerros > self.alin:
             self.kerros -= 1
-            print(f"Saavuit kerrokseen: {self.kerros}.")
+            print(f"Hissi liikkui alaspäin.")
+            print(f"Saavui kerrokseen: {self.kerros}.")
 
     def h(self): #metodi
         while self.kerros < self.ylin:
