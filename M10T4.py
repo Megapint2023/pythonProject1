@@ -1,4 +1,4 @@
-#Tehtävä on jatkoa aiemmalle autokilpailutehtävälle.
+# Tehtävä on jatkoa aiemmalle autokilpailutehtävälle.
 # Kirjoita Kilpailu-luokka, jolla on ominaisuuksina kilpailun nimi,
 # pituus kilometreinä ja osallistuvien autojen lista. Luokassa on alustaja,
 # joka saa parametreinaan nimen, kilometrimäärän ja autolistan ja asettaa ne ominaisuuksille arvoiksi.
@@ -16,6 +16,13 @@
 # jonka jälkeen aina tarkistetaan kilpailu_ohi-metodin avulla, onko kilpailu ohi.
 # Ajantasainen tilanne tulostetaan tulosta tilanne-metodin avulla kymmenen tunnin välein
 # sekä kertaalleen sen jälkeen, kun kilpailu on päättynyt.
+
+class Kilpailu:
+    def __init__(self, nimi, pituus, autot):
+        self.nimi = nimi
+        self.pituus = pituus
+        self.autot = autot
+        self.osallistujat = []
 
 import random
 
