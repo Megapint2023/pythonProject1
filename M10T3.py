@@ -42,9 +42,9 @@ class Talo:
             self.hissit[hissi_nro].siirry_kerrokseen(kohdekerros)
 
     def palohälytys(self):
-        print(f"Palohälytys!")
+        print(f"PALOHÄLYTYS!")
         for hissi in self.hissit:
-            hissi.siirtyy_kerrokseen(0)
+            hissi.siirry_kerrokseen(0)
 
 talo = Talo(4, 0, 5)
 talo.aja_hissiä(1, 5)
