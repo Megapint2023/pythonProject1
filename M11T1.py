@@ -6,3 +6,13 @@
 # Tulosta molempien julkaisujen kaikki tiedot toteuttamiesi metodien avulla.
 
 class Kirja:
+    def __init__(self, nimi, kirjailija, sivumäärä):
+        self.nimi = nimi
+        self.kirjailija = kirjailija
+        self.sivumäärä = sivumäärä
+
+class Lehti:
+    def __init__(self, nimi, päätoimittaja, sivumäärä):
+        self.nimi = nimi
+        self.päätoimittaja = päätoimittaja
+        self.sivumäärä = sivumäärä
