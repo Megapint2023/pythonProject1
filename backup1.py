@@ -32,27 +32,19 @@ COLORS = [
 RESET = "\033[0m"  # Reset color to default
 
 class Kilpailu:
-    def __init__(self, nimi, pituus):
+    def __init__(self, nimi, pituus, autot):
         self.nimi = nimi
         self.pituus = pituus
-        self.autot = []
+        self.autot = autot
+        self.osallistujat = []
 
-    def luo_autot(self):
-        merkit = ["Toyota", "Mercedes", "BMW", "Audi", "Ford", "Chevrolet", "Honda", "Nissan", "Porsche", "Volkswagen"]
-        for i in range(1, 11):
-            name = random.choice(merkit)
-            merkit.remove(name)
-            rekisteri = f"ABC-{i}"
-            huippunopeus = random.randint(150, 190)
-            self.autot.append(Auto(rekisteri, huippunopeus, name))
-
-class Auto: #class
-    def __init__(self, rekisteri, huippunopeus, name): # alustaja ja parametrit
+class Auto: # tämä class
+    def __init__(self, rekisteri, huippunopeus, name): # tämä alustaja
         # ominaisuudet
         self.name = name
         self.rekisteri = rekisteri
         self.huippunopeus = huippunopeus
-        self.nopeus = 100 # alkunopeutta nostettu toimivuuden vuoksi, jotkut autoista jos saavat esim neg arvon kolmesti, eivät muka liiku tuntien ajan...
+        self.nopeus = 100 # alkunopeutta nostettu toimivuuden vuoksi, jotkut autoista jos saavat esim neg arvon kolmesti, ne eivät muka liiku 30h aikana... ei järkeä
         self.matka = 0
 
     def kiihdytys(self):
@@ -66,10 +58,22 @@ class Auto: #class
     def kulje(self, aika):
         self.matka += self.nopeus * aika
 
-kilpailu = Kilpailu("Suuri Romuralli", 8000)
-kilpailu.luo_autot()
+def luo_autot():
+    autot = []
+    merkit = ["Toyota", "Mercedes", "BMW", "Audi", "Ford", "Chevrolet", "Honda", "Nissan", "Porsche", "Volkswagen"]
+    for i in range(1, 11):
+        name = random.choice(merkit)
+        merkit.remove(name)
+        rekisteri = f"ABC-{i}"
+        huippunopeus = random.randint(150, 200)
+        autot.append(Auto(rekisteri, huippunopeus, name))
+    return autot
+
+autot = luo_autot()
+kilpailu = Kilpailu("Suuri Romuralli", 8000, autot)
 kilpailu_jatkuu = True
 aikaa_kulunut = 0
+
 previous_positions = {auto: i for i, auto in enumerate(kilpailu.autot)}
 
 while kilpailu_jatkuu:
@@ -85,16 +89,20 @@ while kilpailu_jatkuu:
         kilpailu.autot.sort(key=lambda x: x.matka, reverse=True)
         print("🔥🔥🔥 Suuri Romuralli 🔥🔥🔥")
         print(f"⏳Tilanne {aikaa_kulunut} tunnin kohdalla...")
-        print(f"{'Sijoitus:':<10}{'Auto:':<13}{'Rekisteri:':<12}{'Huippunopeus:':<14}{'Nopeus:':<10}{'Kuljettu matka:'}")
+        print(f"{'Sijoitus:':<10}{'Auto:':<13}{'Rekisteri:':<12}{'Huippunopeus:':<14}{'Nopeus:':<15}{'Kuljettu matka:'}")
         previous_positions = {auto: i for i, auto in enumerate(kilpailu.autot)}
         for index, auto in enumerate(kilpailu.autot, start=1):
             car_color = COLORS[index % len(COLORS)]
-            print(f"{car_color}{index:<10}{auto.name:<13}{auto.rekisteri:<12}{auto.huippunopeus:<14}{auto.nopeus:<10}{auto.matka:.2f} km{RESET}")
+            print(f"{car_color}{index:<10}{auto.name:<13}{auto.rekisteri:<12}{auto.huippunopeus:<14}{auto.nopeus:<15}{auto.matka:.2f} km{RESET}")
+
 
 kilpailu.autot.sort(key=lambda x: x.matka, reverse=True)
+
 print("\n🏁🏁🏁 Sijoitukset! 🏁🏁🏁")
 print(f"Kilpailuun kulunut aika: {aikaa_kulunut} tuntia.\n")
-print(f"{'Sijoitus:':<10}{'Auto:':<13}{'Rekisteri:':<12}{'Huippunopeus:':<14}{'Nopeus:':<10}{'Kuljettu matka:':}")
+print(f"{'Sijoitus:':<10}{'Auto:':<13}{'Rekisteri:':<12}{'Huippunopeus:':<14}{'Nopeus:':<15}{'Kuljettu matka:':}")
 for index, auto in enumerate(kilpailu.autot, start=1):
     car_color = COLORS[index % len(COLORS)]
-    print(f"{car_color}{index:<10}{auto.name:<13}{auto.rekisteri:<12}{auto.huippunopeus:<14}{auto.nopeus:<10}{auto.matka:.2f} km{RESET}")
+    print(f"{car_color}{index:<10}{auto.name:<13}{auto.rekisteri:<12}{auto.huippunopeus:<14}{auto.nopeus:<15}{auto.matka:.2f} km{RESET}")
+#for index, auto in enumerate(kilpailu.autot, start=1):
+#    print(f"{index:<10}{auto.name:<13}{auto.rekisteri:<12}{auto.huippunopeus:<14}{auto.nopeus:<20}{auto.matka:.2f} km")
