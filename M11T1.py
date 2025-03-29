@@ -5,14 +5,13 @@
 # Luo pääohjelmassa julkaisut Aku Ankka (päätoimittaja Aki Hyyppä) ja Hytti n:o 6 (kirjailija Rosa Liksom, 200 sivua).
 # Tulosta molempien julkaisujen kaikki tiedot toteuttamiesi metodien avulla.
 
-class Kirja:
-    def __init__(self, nimi, kirjailija, sivumäärä):
+class Julkaisu:
+    def __init__(self, tyyppi, nimi, tuottaja, sivumäärä):
+        self.tyyppi = tyyppi
         self.nimi = nimi
-        self.kirjailija = kirjailija
+        self.tuottaja = tuottaja
         self.sivumäärä = sivumäärä
 
-class Lehti:
-    def __init__(self, nimi, päätoimittaja, sivumäärä):
-        self.nimi = nimi
-        self.päätoimittaja = päätoimittaja
-        self.sivumäärä = sivumäärä
+
+julkaisu1 = Julkaisu("Kirja", "Meikäläiset", "Ella Bella", 135)
+print(f"{Julkaisu.tyyppi()}, {Julkaisu.nimi()}, {Julkaisu.tuottaja()}, {Julkaisu.sivumäärä()}.")
