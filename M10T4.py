@@ -64,19 +64,17 @@ kilpailu_jatkuu = True
 aikaa_kulunut = 0
 
 while kilpailu_jatkuu:
-    for auto in autot:
+    for auto in kilpailu.autot:
         auto.kiihdytys()
         auto.kulje(1)
-
         if auto.matka >= 8000:
             kilpailu_jatkuu = False
             break
-
     aikaa_kulunut += 1
 
     if aikaa_kulunut % 10 == 0:
-        kipailu.autot.sort(key=lambda x: x.matka, reverse=True)
-        print(f"Tilanne {aikaa_kulunut}")
+        kilpailu.autot.sort(key=lambda x: x.matka, reverse=True)
+        print(f"Tilanne {aikaa_kulunut} tunnin kohdalla...")
         print(f"{'Sijoitus:':<10}{'Auto:':<13}{'Rekisteri:':<12}{'Huippunopeus:':<14}{'Lopullinen nopeus:':<20}{'Kuljettu matka:'}")
         for index, auto in enumerate(kilpailu.autot, start=1):
             print(f"{index:<10}{auto.name:<13}{auto.rekisteri:<12}{auto.huippunopeus:<14}{auto.nopeus:<20}{auto.matka:.2f} km")
