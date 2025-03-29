@@ -74,15 +74,16 @@ while kilpailu_jatkuu:
 
     if aikaa_kulunut % 10 == 0:
         kilpailu.autot.sort(key=lambda x: x.matka, reverse=True)
+        print("")
         print(f"Tilanne {aikaa_kulunut} tunnin kohdalla...")
         print(f"{'Sijoitus:':<10}{'Auto:':<13}{'Rekisteri:':<12}{'Huippunopeus:':<14}{'Lopullinen nopeus:':<20}{'Kuljettu matka:'}")
         for index, auto in enumerate(kilpailu.autot, start=1):
             print(f"{index:<10}{auto.name:<13}{auto.rekisteri:<12}{auto.huippunopeus:<14}{auto.nopeus:<20}{auto.matka:.2f} km")
 
-autot.sort(key=lambda x: x.matka, reverse=True)
+kilpailu.autot.sort(key=lambda x: x.matka, reverse=True)
 
 print("\n🏁 Sijoitukset! 🏁")
 print(f"Kilpailuun kulunut aika: {aikaa_kulunut} tuntia.\n")
 print(f"{'Sijoitus:':<10}{'Auto:':<13}{'Rekisteri:':<12}{'Huippunopeus:':<14}{'Lopullinen nopeus:':<20}{'Kuljettu matka:':}")
-for index, auto in enumerate(autot, start=1):
+for index, auto in enumerate(kilpailu.autot, start=1):
     print(f"{index:<10}{auto.name:<13}{auto.rekisteri:<12}{auto.huippunopeus:<14}{auto.nopeus:<20}{auto.matka:.2f} km")
