@@ -6,16 +6,19 @@
 #tunti_kuluu, joka toteuttaa aiemmassa autokilpailutehtävässä mainitut tunnin välein
 # tehtävät toimenpiteet eli arpoo kunkin auton nopeuden muutoksen
 # ja kutsuu kullekin autolle kulje-metodia.
-#tulosta_tilanne, joka tulostaa kaikkien autojen sen hetkiset tiedot selkeäksi taulukoksi muotoiltuna.
-#kilpailu_ohi, joka palauttaa True,
+# tulosta_tilanne, joka tulostaa kaikkien autojen sen hetkiset tiedot selkeäksi taulukoksi muotoiltuna.
+# kilpailu_ohi, joka palauttaa True,
 # jos jokin autoista on maalissa eli se on ajanut vähintään kilpailun kokonaiskilometrimäärän.
 # Muussa tapauksessa palautetaan False.
-#Kirjoita pääohjelma, joka luo 8000 kilometrin kilpailun nimeltä "Suuri romuralli".
+
+# Kirjoita pääohjelma, joka luo 8000 kilometrin kilpailun nimeltä "Suuri romuralli".
 # Luotavalle kilpailulle annetaan kymmenen auton lista samaan tapaan kuin aiemmassa tehtävässä.
 # Pääohjelma simuloi kilpailun etenemistä kutsumalla toistorakenteessa tunti_kuluu-metodia,
 # jonka jälkeen aina tarkistetaan kilpailu_ohi-metodin avulla, onko kilpailu ohi.
 # Ajantasainen tilanne tulostetaan tulosta tilanne-metodin avulla kymmenen tunnin välein
 # sekä kertaalleen sen jälkeen, kun kilpailu on päättynyt.
+
+import random
 
 class Kilpailu:
     def __init__(self, nimi, pituus, autot):
@@ -23,8 +26,6 @@ class Kilpailu:
         self.pituus = pituus
         self.autot = autot
         self.osallistujat = []
-
-import random
 
 class Auto: # tämä class
     def __init__(self, rekisteri, huippunopeus, name): # tämä alustaja
@@ -66,7 +67,7 @@ while kilpailu_jatkuu:
         auto.kiihdytys()
         auto.kulje(1)
 
-        if auto.matka >= 10000:
+        if auto.matka >= 8000:
             kilpailu_jatkuu = False
             break
 
