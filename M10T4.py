@@ -59,6 +59,7 @@ def luo_autot():
     return autot
 
 autot = luo_autot()
+kilpailu = Kilpailu("Suuri Romuralli", 8000, autot)
 kilpailu_jatkuu = True
 aikaa_kulunut = 0
 
@@ -72,6 +73,13 @@ while kilpailu_jatkuu:
             break
 
     aikaa_kulunut += 1
+
+    if aikaa_kulunut % 10 == 0:
+        kipailu.autot.sort(key=lambda x: x.matka, reverse=True)
+        print(f"Tilanne {aikaa_kulunut}")
+        print(f"{'Sijoitus:':<10}{'Auto:':<13}{'Rekisteri:':<12}{'Huippunopeus:':<14}{'Lopullinen nopeus:':<20}{'Kuljettu matka:'}")
+        for index, auto in enumerate(kilpailu.autot, start=1):
+            print(f"{index:<10}{auto.name:<13}{auto.rekisteri:<12}{auto.huippunopeus:<14}{auto.nopeus:<20}{auto.matka:.2f} km")
 
 autot.sort(key=lambda x: x.matka, reverse=True)
 
