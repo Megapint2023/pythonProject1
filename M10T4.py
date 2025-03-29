@@ -92,8 +92,8 @@ while kilpailu_jatkuu:
             print(f"{car_color}{index:<10}{auto.name:<13}{auto.rekisteri:<12}{auto.huippunopeus:<14}{auto.nopeus:<10}{auto.matka:.2f} km{RESET}")
 
 kilpailu.autot.sort(key=lambda x: x.matka, reverse=True)
-print("\n🏁🏁🏁 Sijoitukset! 🏁🏁🏁")
-print(f"Kilpailuun kulunut aika: {aikaa_kulunut} tuntia.\n")
+print("🏁🏁🏁 Sijoitukset! 🏁🏁🏁")
+print(f"Kilpailuun kulunut aika: {aikaa_kulunut} tuntia.")
 print(f"{'Sijoitus:':<10}{'Auto:':<13}{'Rekisteri:':<12}{'Huippunopeus:':<14}{'Nopeus:':<10}{'Kuljettu matka:':}")
 for index, auto in enumerate(kilpailu.autot, start=1):
     car_color = COLORS[index % len(COLORS)]
