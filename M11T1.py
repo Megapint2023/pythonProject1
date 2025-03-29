@@ -12,6 +12,8 @@ class Julkaisu:
         self.tuottaja = tuottaja
         self.sivumäärä = sivumäärä
 
+    def generate(self):
+        print(f"{Julkaisu.tyyppi()}, {Julkaisu.nimi()}, {Julkaisu.tuottaja()}, {Julkaisu.sivumäärä()}.")
+
 
 julkaisu1 = Julkaisu("Kirja", "Meikäläiset", "Ella Bella", 135)
-print(f"{Julkaisu.tyyppi()}, {Julkaisu.nimi()}, {Julkaisu.tuottaja()}, {Julkaisu.sivumäärä()}.")
