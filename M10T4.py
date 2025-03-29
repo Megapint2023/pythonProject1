@@ -44,7 +44,7 @@ class Auto: # tämä class
         self.name = name
         self.rekisteri = rekisteri
         self.huippunopeus = huippunopeus
-        self.nopeus = 0
+        self.nopeus = 100 # alkunopeutta nostettu toimivuuden vuoksi, jotkut autoista jos saavat esim neg arvon kolmesti, ne eivät muka liiku 30h aikana... ei järkeä
         self.matka = 0
 
     def kiihdytys(self):
@@ -65,7 +65,7 @@ def luo_autot():
         name = random.choice(merkit)
         merkit.remove(name)
         rekisteri = f"ABC-{i}"
-        huippunopeus = random.randint(100, 200)
+        huippunopeus = random.randint(150, 200)
         autot.append(Auto(rekisteri, huippunopeus, name))
     return autot
 
@@ -87,22 +87,22 @@ while kilpailu_jatkuu:
 
     if aikaa_kulunut % 10 == 0:
         kilpailu.autot.sort(key=lambda x: x.matka, reverse=True)
-        print("🏁 Suuri Romuralli 🏁")
+        print("🔥🔥🔥 Suuri Romuralli 🔥🔥🔥")
         print(f"⏳Tilanne {aikaa_kulunut} tunnin kohdalla...")
         print(f"{'Sijoitus:':<10}{'Auto:':<13}{'Rekisteri:':<12}{'Huippunopeus:':<14}{'Nopeus:':<15}{'Kuljettu matka:'}")
         previous_positions = {auto: i for i, auto in enumerate(kilpailu.autot)}
         for index, auto in enumerate(kilpailu.autot, start=1):
             car_color = COLORS[index % len(COLORS)]
-            print(f"{car_color}{index:<10}{auto.name:<13}{auto.rekisteri:<12}{auto.huippunopeus:<14}{auto.nopeus:<15}{auto.matka:.2f} km")
+            print(f"{car_color}{index:<10}{auto.name:<13}{auto.rekisteri:<12}{auto.huippunopeus:<14}{auto.nopeus:<15}{auto.matka:.2f} km{RESET}")
 
 
 kilpailu.autot.sort(key=lambda x: x.matka, reverse=True)
 
-print("\n🏁 Sijoitukset! 🏁")
+print("\n🏁🏁🏁 Sijoitukset! 🏁🏁🏁")
 print(f"Kilpailuun kulunut aika: {aikaa_kulunut} tuntia.\n")
 print(f"{'Sijoitus:':<10}{'Auto:':<13}{'Rekisteri:':<12}{'Huippunopeus:':<14}{'Nopeus:':<15}{'Kuljettu matka:':}")
 for index, auto in enumerate(kilpailu.autot, start=1):
     car_color = COLORS[index % len(COLORS)]
-    print(f"{car_color}{index:<10}{auto.name:<13}{auto.rekisteri:<12}{auto.huippunopeus:<14}{auto.nopeus:<15}{auto.matka:.2f} km")
+    print(f"{car_color}{index:<10}{auto.name:<13}{auto.rekisteri:<12}{auto.huippunopeus:<14}{auto.nopeus:<15}{auto.matka:.2f} km{RESET}")
 #for index, auto in enumerate(kilpailu.autot, start=1):
 #    print(f"{index:<10}{auto.name:<13}{auto.rekisteri:<12}{auto.huippunopeus:<14}{auto.nopeus:<20}{auto.matka:.2f} km")
