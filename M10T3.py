@@ -19,7 +19,7 @@ class Hissi:
     def liiku_alas(self): #metodi
         if self.kerros > self.alin:
             self.kerros -= 1
-            print(f"Siirtyy alaspäin.")
+            print(f"Siirtyy alaspäin...")
             print(f"Kerros: {self.kerros}.")
 
     def siirry_kerrokseen(self, kohdekerros): #metodi
@@ -38,12 +38,13 @@ class Talo:
             self.hissit.append(Hissi(alin, ylin))
 
     def aja_hissiä(self, hissi_nro, kohdekerros):
-            print(f"Hissi nro. {hissi_nro} lähtee kerrokseen: {kohdekerros}:")
+            print(f"Hissi nro. {hissi_nro} lähtee kerrokseen: {kohdekerros}")
             self.hissit[hissi_nro].siirry_kerrokseen(kohdekerros)
 
     def palohälytys(self):
-        print(f"PALOHÄLYTYS!")
-        for hissi in self.hissit:
+        print(f"PALOHÄLYTYS! 🔥🔥🔥")
+        for i, hissi in enumerate(self.hissit): # enumerate on funktio joka lisää indexing listan jokaiselle itemille
+            print(f"Hissi nro. {i} ")
             hissi.siirry_kerrokseen(0)
 
 talo = Talo(4, 0, 5)
