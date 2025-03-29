@@ -42,7 +42,7 @@ class Talo:
             self.hissit[hissi_nro].siirry_kerrokseen(kohdekerros)
 
     def palohälytys(self):
-        print(f"PALOHÄLYTYS! 🔥🔥🔥")
+        print(f"PALOHÄLYTYS! 🔥🔥🔥") # emojit voi myös kirjoittaa {fire}
         for i, hissi in enumerate(self.hissit): # enumerate on funktio joka lisää indexing listan jokaiselle itemille
             print(f"Hissi nro. {i} ")
             hissi.siirry_kerrokseen(0)
