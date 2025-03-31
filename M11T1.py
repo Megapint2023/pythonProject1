@@ -30,7 +30,7 @@ class Julkaise_kirja(Julkaisu):
         super().tulosta_tiedot()
         print(f' - Julkaistu kirja: {self.kirja}')
 
-class Julkaise_Lehti(Julkaisu):
+class Julkaise_lehti(Julkaisu):
     def __init__(self, etunimi, sukunimi, julkaisun_nimi, julkaisun_tyyppi, sivumäärä):
         super().__init__(etunimi, sukunimi, julkaisun_nimi, julkaisun_tyyppi, sivumäärä)
 
@@ -39,17 +39,15 @@ class Julkaise_Lehti(Julkaisu):
         print(f' - Julkaistu lehti: {self.lehti}')
 
 
+julkaisut = []
+julkaisut.append(Julkaisu("Viivi", "Virta"))
+julkaisut.append(Julkaisu("Ahmed", "Habib"))
 
+julkaisut.append(Julkaise_kirja('Pertti', 'Kaski', 50.0))
+julkaisut.append(Julkaise_lehti('Iina', 'Kekkiläinen', 5000.0))
 
-työntekijät = []
-työntekijät.append(Työntekijä("Viivi", "Virta"))
-työntekijät.append(Työntekijä("Ahmed", "Habib"))
-
-työntekijät.append(Tuntipalkkainen('Pertti', 'Kaski', 50.0))
-työntekijät.append(Kuukausipalkkainen('Iina', 'Kekkiläinen', 5000.0))
-
-for t in työntekijät:
-    t.tulosta_tiedot()
+for j in julkaisut:
+    j.tulosta_tiedot()
 
 
 
