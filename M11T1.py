@@ -7,15 +7,16 @@
 
 
 
-class Työntekijä:
+class Julkaisut:
 
-    työntekijöiden_lukumäärä = 0
+    julkaisujen_lukumäärä = 0
 
-    def __init__(self, etunimi, sukunimi):
-        Työntekijä.työntekijöiden_lukumäärä += 1
-        self.työntekijänumero = Työntekijä.työntekijöiden_lukumäärä
+    def __init__(self, etunimi, sukunimi, nimi, sivumäärä):
+        Julkaisut.julkaisujen_lukumäärä += 1
         self.etunimi = etunimi
         self.sukunimi = sukunimi
+        self.nimi = nimi
+        self.sivumäärä = sivumäärä
 
     def tulosta_tiedot(self):
         print(f"{self.työntekijänumero}: {self.etunimi} {self.sukunimi}")
