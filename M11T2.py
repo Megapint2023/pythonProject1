@@ -19,17 +19,16 @@ class Auto:
 
     def tulosta_tiedot(self):
         print(f" - Auton rekisteri: {self.rekisteri}")
-        print(f" - Auton huippunopeus: {self.huippunopus} km/h.")
+        print(f" - Auton huippunopeus: {self.huippunopeus} km/h.")
 
 class Sähkö(Auto):
     def __init__(self, rekisteri, huippunopeus, kapasiteetti):
         super().__init__(rekisteri, huippunopeus)
-        self.kapasitettti = kapasiteetti # kWh
+        self.kapasiteetti = kapasiteetti # kWh
 
     def tulosta_tiedot(self):
         super().tulosta_tiedot()
-        print(f' - Akun kapasiteetti tyyppi: {self.kapasiteetti}')
-        print(f"-")
+        print(f' - Akun kapasiteetti: {self.kapasiteetti} kWh.')
 
 class Polttomoottori(Auto):
     def __init__(self, rekisteri, huippunopeus, moottorinkoko):
@@ -38,7 +37,7 @@ class Polttomoottori(Auto):
 
     def tulosta_tiedot(self):
         super().tulosta_tiedot()
-        print(f' - Moottorikoko litraa: {self.moottorinkoko}')
+        print(f' - Moottorin koko: {self.moottorinkoko} litraa.')
 
 autot = []
 autot.append(Sähkö('ABC-15', 180, 52.5))
