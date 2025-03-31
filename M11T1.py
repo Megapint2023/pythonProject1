@@ -7,12 +7,12 @@
 
 
 
-class Julkaisut:
+class Julkaisu:
 
     julkaisujen_lukumäärä = 0
 
     def __init__(self, etunimi, sukunimi, julkaisun_nimi, julkaisun_tyyppi, sivumäärä):
-        Julkaisut.julkaisujen_lukumäärä += 1
+        Julkaisu.julkaisujen_lukumäärä += 1
         self.etunimi = etunimi
         self.sukunimi = sukunimi
         self.julkaisun_nimi = julkaisun_nimi
@@ -22,22 +22,21 @@ class Julkaisut:
     def tulosta_tiedot(self):
         print(f"{self.etunimi} {self.sukunimi} {self.julkaisun_nimi} {self.julkaisun_tyyppi} {self.sivumäärä}")
 
-class Julkaise_kirja(Julkaisut):
+class Julkaise_kirja(Julkaisu):
     def __init__(self, etunimi, sukunimi, julkaisun_nimi, julkaisun_tyyppi, sivumäärä):
         super().__init__(etunimi, sukunimi, julkaisun_nimi, julkaisun_tyyppi, sivumäärä)
 
     def tulosta_tiedot(self):
         super().tulosta_tiedot()
-        print(f' - Tuntipalkka on {self.tuntipalkka}')
+        print(f' - Julkaistu kirja: {self.kirja}')
 
-class Julkaise_Lehti(Julkaisut):
-    def __init__(self, etunimi, sukunimi, kuukausipalkka):
-        super().__init__(etunimi, sukunimi)
-        self.kuukausipalkka = kuukausipalkka
+class Julkaise_Lehti(Julkaisu):
+    def __init__(self, etunimi, sukunimi, julkaisun_nimi, julkaisun_tyyppi, sivumäärä):
+        super().__init__(etunimi, sukunimi, julkaisun_nimi, julkaisun_tyyppi, sivumäärä)
 
     def tulosta_tiedot(self):
         super().tulosta_tiedot()
-        print(f' - Kuukausipalkka on {self.kuukausipalkka}')
+        print(f' - Julkaistu lehti: {self.lehti}')
 
 
 
