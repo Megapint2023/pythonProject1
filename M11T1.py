@@ -6,7 +6,6 @@
 # Tulosta molempien julkaisujen kaikki tiedot toteuttamiesi metodien avulla.
 
 class Julkaisu:
-
     julkaisujen_lukumäärä = 0
 
     def __init__(self, julkaisun_nimi):
@@ -35,12 +34,12 @@ class Julkaise_lehti(Julkaisu):
 
     def tulosta_tiedot(self):
         super().tulosta_tiedot()
-        print(f' - Päätoimittaja: {self.lehti}')
+        print(f' - Päätoimittaja: {self.päätoimittaja}')
 
 
 julkaisut = []
-julkaisut.append(Julkaise_kirja('Rosa', 'Liksom', "Hytti n:o 6", "Kirja", 200))
-julkaisut.append(Julkaise_lehti("Aki", "Hyyppä", "Aku Ankka","Lehti:", 0))
+julkaisut.append(Julkaise_kirja('Rosa', 'Liksom', "Hytti n:o 6", 200))
+julkaisut.append(Julkaise_lehti("Aku Ankka", "Aki Hyyppä"))
 
 for j in julkaisut:
     j.tulosta_tiedot()
