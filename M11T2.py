@@ -21,10 +21,11 @@ class Auto:
         print(f" - Auton tyyppi: {self.tyyppi}")
 
 class sähkö(Auto):
-    def __init__(self, kulutus, kapasiteetti):
+    def __init__(self, rekisteri, huippunopeus):
         super().__init__(Auto)
-        self.kulutus = kulutus
-        self.kapasitettti = kapasiteetti
+        self.rekisteri = rekisteri
+        self.huippunopeus = huippunopeus
+        self.kapasitettti = 0 #kWh
 
     def tulosta_tiedot(self):
         super().tulosta_tiedot()
@@ -34,13 +35,13 @@ class sähkö(Auto):
 
 
 class polttomoottori(Auto):
-    def __init__(self, julkaisun_nimi, päätoimittaja):
-        super().__init__(julkaisun_nimi)
-        self.päätoimittaja = päätoimittaja
+    def __init__(self):
+        super().__init__(Auto)
+        self.moottorinkoko = 0 #litraa
 
     def tulosta_tiedot(self):
         super().tulosta_tiedot()
-        print(f' - Päätoimittaja: {self.päätoimittaja}')
+        print(f' - Litran moottori: {self.moottorinkoko}')
 
 
 autot = []
