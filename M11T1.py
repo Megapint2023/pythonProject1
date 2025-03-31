@@ -13,7 +13,7 @@ class Julkaisu:
         self.julkaisun_nimi = julkaisun_nimi
 
     def tulosta_tiedot(self):
-        print(f"{self.julkaisun_nimi}")
+        print(f" - Uusi julkaisu: {self.julkaisun_nimi}")
 
 class Julkaise_kirja(Julkaisu):
     def __init__(self, etunimi, sukunimi, julkaisun_nimi, sivumäärä):
@@ -26,6 +26,8 @@ class Julkaise_kirja(Julkaisu):
         super().tulosta_tiedot()
         print(f' - Kirjailija: {self.etunimi}, {self.sukunimi}')
         print(f' - Sivumäärä: {self.sivumäärä}')
+        print(f"-")
+
 
 class Julkaise_lehti(Julkaisu):
     def __init__(self, julkaisun_nimi, päätoimittaja):
