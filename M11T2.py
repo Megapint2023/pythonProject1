@@ -13,42 +13,37 @@
 
 
 class Auto:
-    def __init__(self, nimi):
-        self.nimi = nimi
-
-    def tulosta_tiedot(self, tyyppi):
-        self.tyyppi = tyyppi
-        print(f" - Auton tyyppi: {self.tyyppi}")
-
-class sähkö(Auto):
     def __init__(self, rekisteri, huippunopeus):
-        super().__init__(Auto)
         self.rekisteri = rekisteri
         self.huippunopeus = huippunopeus
-        self.kapasitettti = 0 #kWh
+
+    def tulosta_tiedot(self):
+        print(f" - Auton rekisteri: {self.rekisteri}")
+        print(f" - Auton huippunopeus: {self.huippunopus} km/h.")
+
+class Sähkö(Auto):
+    def __init__(self, rekisteri, huippunopeus, kapasiteetti):
+        super().__init__(rekisteri, huippunopeus)
+        self.kapasitettti = kapasiteetti # kWh
 
     def tulosta_tiedot(self):
         super().tulosta_tiedot()
-        print(f' - Auton tyyppi: {self.tyyppi}, {self.sukunimi}')
-        print(f' - Auton kulutus: {self.kulutus}')
+        print(f' - Akun kapasiteetti tyyppi: {self.kapasiteetti}')
         print(f"-")
 
-
-class polttomoottori(Auto):
-    def __init__(self, rekisteri, huippunopeus):
-        super().__init__(Auto)
-        self.rekisteri = rekisteri
-        self.huippunopeus = huippunopeus
-        self.moottorinkoko = 0 #litraa
+class Polttomoottori(Auto):
+    def __init__(self, rekisteri, huippunopeus, moottorinkoko):
+        super().__init__(rekisteri, huippunopeus)
+        self.moottorinkoko = moottorinkoko
 
     def tulosta_tiedot(self):
         super().tulosta_tiedot()
-        print(f' - Litran moottori: {self.moottorinkoko}')
-
+        print(f' - Moottorikoko litraa: {self.moottorinkoko}')
 
 autot = []
-autot.append(Auto_sähkö('ABC-15', 180, 52.5))
-autot.append(Auto_polttomoottori("ACD-123", 165, 32.3))
+autot.append(Sähkö('ABC-15', 180, 52.5))
+autot.append(Polttomoottori("ACD-123", 165, 32.3))
 
-for j in autot:
-    j.tulosta_tiedot()
+for auto in autot:
+    auto.tulosta_tiedot()
+    print()
