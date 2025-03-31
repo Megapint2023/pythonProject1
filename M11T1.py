@@ -17,46 +17,31 @@ class Julkaisu:
         print(f"{self.julkaisun_nimi}")
 
 class Julkaise_kirja(Julkaisu):
-    def __init__(self, etunimi, sukunimi, julkaisun_nimi, julkaisun_tyyppi, sivumäärä):
-        self.julkaisun_tyyppi = julkaisun_tyyppi
+    def __init__(self, etunimi, sukunimi, julkaisun_nimi, sivumäärä):
+        super().__init__(julkaisun_nimi)
         self.sivumäärä = sivumäärä
         self.etunimi = etunimi
         self.sukunimi = sukunimi
-        super().__init__(etunimi, sukunimi, julkaisun_nimi, julkaisun_tyyppi, sivumäärä)
 
     def tulosta_tiedot(self):
         super().tulosta_tiedot()
-        print(f' - Julkaistu kirja: {self.kirja}')
+        print(f' - Kirjailija: {self.etunimi}, {self.sukunimi}')
+        print(f' - Sivumäärä: {self.sivumäärä}')
 
 class Julkaise_lehti(Julkaisu):
-    def __init__(self, etunimi, sukunimi, julkaisun_nimi, julkaisun_tyyppi, sivumäärä):
-        super().__init__(etunimi, sukunimi, julkaisun_nimi, julkaisun_tyyppi, sivumäärä)
+    def __init__(self, julkaisun_nimi, päätoimittaja):
+        super().__init__(julkaisun_nimi)
+        self.päätoimittaja = päätoimittaja
 
     def tulosta_tiedot(self):
         super().tulosta_tiedot()
-        print(f' - Julkaistu lehti: {self.lehti}')
+        print(f' - Päätoimittaja: {self.lehti}')
 
 
 julkaisut = []
-#julkaisut.append(Julkaisu("Aki", "Hyyppä", "Hytti n:o 6","Kirja:", 0))
-#julkaisut.append(Julkaisu("Ahmed", "Habib"))
 julkaisut.append(Julkaise_kirja('Rosa', 'Liksom', "Hytti n:o 6", "Kirja", 200))
 julkaisut.append(Julkaise_lehti("Aki", "Hyyppä", "Aku Ankka","Lehti:", 0))
 
 for j in julkaisut:
     j.tulosta_tiedot()
 
-
-
-#class Julkaisu:
-#    def __init__(self, tyyppi, nimi, tuottaja, sivumäärä):
-#        self.tyyppi = tyyppi
-#        self.nimi = nimi
-#        self.tuottaja = tuottaja
-#        self.sivumäärä = sivumäärä
-#
-#    def generate(self):
-#        print(f"{Julkaisu.tyyppi()}, {Julkaisu.nimi()}, {Julkaisu.tuottaja()}, {Julkaisu.sivumäärä()}.")
-#
-#
-#julkaisu1.generate("Kirja", "Meikäläiset", "Ella Bella", 135)
