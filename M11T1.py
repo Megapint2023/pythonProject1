@@ -11,26 +11,26 @@ class Julkaisut:
 
     julkaisujen_lukumäärä = 0
 
-    def __init__(self, etunimi, sukunimi, nimi, sivumäärä):
+    def __init__(self, etunimi, sukunimi, julkaisun_nimi, julkaisun_tyyppi, sivumäärä):
         Julkaisut.julkaisujen_lukumäärä += 1
         self.etunimi = etunimi
         self.sukunimi = sukunimi
-        self.nimi = nimi
+        self.julkaisun_nimi = julkaisun_nimi
+        self.julkaisun_tyyppi = julkaisun_tyyppi
         self.sivumäärä = sivumäärä
 
     def tulosta_tiedot(self):
-        print(f"{self.työntekijänumero}: {self.etunimi} {self.sukunimi}")
+        print(f"{self.etunimi} {self.sukunimi} {self.julkaisun_nimi} {self.julkaisun_tyyppi} {self.sivumäärä}")
 
-class Tuntipalkkainen(Työntekijä):
-    def __init__(self, etunimi, sukunimi, tuntipalkka):
-        super().__init__(etunimi, sukunimi)
-        self.tuntipalkka = tuntipalkka
+class Julkaise_kirja(Julkaisut):
+    def __init__(self, etunimi, sukunimi, julkaisun_nimi, julkaisun_tyyppi, sivumäärä):
+        super().__init__(etunimi, sukunimi, julkaisun_nimi, julkaisun_tyyppi, sivumäärä)
 
     def tulosta_tiedot(self):
         super().tulosta_tiedot()
         print(f' - Tuntipalkka on {self.tuntipalkka}')
 
-class Kuukausipalkkainen(Työntekijä):
+class Julkaise_Lehti(Julkaisut):
     def __init__(self, etunimi, sukunimi, kuukausipalkka):
         super().__init__(etunimi, sukunimi)
         self.kuukausipalkka = kuukausipalkka
