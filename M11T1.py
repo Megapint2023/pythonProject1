@@ -5,8 +5,6 @@
 # Luo pääohjelmassa julkaisut Aku Ankka (päätoimittaja Aki Hyyppä) ja Hytti n:o 6 (kirjailija Rosa Liksom, 200 sivua).
 # Tulosta molempien julkaisujen kaikki tiedot toteuttamiesi metodien avulla.
 
-
-
 class Julkaisu:
 
     julkaisujen_lukumäärä = 0
@@ -40,11 +38,10 @@ class Julkaise_lehti(Julkaisu):
 
 
 julkaisut = []
-julkaisut.append(Julkaisu("Aki", "Hyyppä", "Hytti n:o 6","Kirja:", 0))
-julkaisut.append(Julkaisu("Ahmed", "Habib"))
-
-julkaisut.append(Julkaise_kirja('Pertti', 'Kaski', 50.0))
-julkaisut.append(Julkaise_lehti('Iina', 'Kekkiläinen', 5000.0))
+#julkaisut.append(Julkaisu("Aki", "Hyyppä", "Hytti n:o 6","Kirja:", 0))
+#julkaisut.append(Julkaisu("Ahmed", "Habib"))
+julkaisut.append(Julkaise_kirja('Rosa', 'Liksom', "Hytti n:o 6", "Kirja", 200))
+julkaisut.append(Julkaise_lehti("Aki", "Hyyppä", "Aku Ankka","Lehti:", 0))
 
 for j in julkaisut:
     j.tulosta_tiedot()
