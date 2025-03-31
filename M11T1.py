@@ -9,19 +9,19 @@ class Julkaisu:
 
     julkaisujen_lukumäärä = 0
 
-    def __init__(self, etunimi, sukunimi, julkaisun_nimi, julkaisun_tyyppi, sivumäärä):
+    def __init__(self, julkaisun_nimi):
         Julkaisu.julkaisujen_lukumäärä += 1
-        self.etunimi = etunimi
-        self.sukunimi = sukunimi
         self.julkaisun_nimi = julkaisun_nimi
-        self.julkaisun_tyyppi = julkaisun_tyyppi
-        self.sivumäärä = sivumäärä
 
     def tulosta_tiedot(self):
-        print(f"{self.etunimi} {self.sukunimi} {self.julkaisun_nimi} {self.julkaisun_tyyppi} {self.sivumäärä}")
+        print(f"{self.julkaisun_nimi}")
 
 class Julkaise_kirja(Julkaisu):
     def __init__(self, etunimi, sukunimi, julkaisun_nimi, julkaisun_tyyppi, sivumäärä):
+        self.julkaisun_tyyppi = julkaisun_tyyppi
+        self.sivumäärä = sivumäärä
+        self.etunimi = etunimi
+        self.sukunimi = sukunimi
         super().__init__(etunimi, sukunimi, julkaisun_nimi, julkaisun_tyyppi, sivumäärä)
 
     def tulosta_tiedot(self):
