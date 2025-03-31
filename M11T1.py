@@ -40,7 +40,7 @@ class Julkaise_lehti(Julkaisu):
 
 
 julkaisut = []
-julkaisut.append(Julkaisu("Viivi", "Virta"))
+julkaisut.append(Julkaisu("Aki", "Hyyppä", "Hytti n:o 6","Kirja:", 0))
 julkaisut.append(Julkaisu("Ahmed", "Habib"))
 
 julkaisut.append(Julkaise_kirja('Pertti', 'Kaski', 50.0))
