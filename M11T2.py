@@ -35,8 +35,10 @@ class sähkö(Auto):
 
 
 class polttomoottori(Auto):
-    def __init__(self):
+    def __init__(self, rekisteri, huippunopeus):
         super().__init__(Auto)
+        self.rekisteri = rekisteri
+        self.huippunopeus = huippunopeus
         self.moottorinkoko = 0 #litraa
 
     def tulosta_tiedot(self):
@@ -45,8 +47,8 @@ class polttomoottori(Auto):
 
 
 autot = []
-autot.append(Auto_sähkö('Rosa', 'Liksom', "Hytti n:o 6", 200))
-autot.append(Auto_polttomoottori("Aku Ankka", "Aki Hyyppä"))
+autot.append(Auto_sähkö('ABC-15', 180, 52.5))
+autot.append(Auto_polttomoottori("ACD-123", 165, 32.3))
 
 for j in autot:
     j.tulosta_tiedot()
