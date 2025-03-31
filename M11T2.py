@@ -37,7 +37,7 @@ class Polttomoottori(Auto):
 
     def tulosta_tiedot(self):
         super().tulosta_tiedot()
-        print(f' - Moottorin koko: {self.moottorinkoko} litraa.')
+        print(f' - Moottorin koko: {self.moottorinkoko} l.')
 
 autot = []
 autot.append(Sähkö('ABC-15', 180, 52.5))
