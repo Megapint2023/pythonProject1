@@ -33,4 +33,5 @@ data = vastaus.json()
 
 print(vastaus)
 print(data)
+print(json.dumps(data, indent=2))
 print("Chuck Norris vitsi:", data["value"])
