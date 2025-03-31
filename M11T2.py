@@ -1,4 +1,4 @@
-#Kirjoita aiemmin laatimallesi Auto-luokalle aliluokat Sähköauto ja Polttomoottoriauto.
+# Kirjoita aiemmin laatimallesi Auto-luokalle aliluokat Sähköauto ja Polttomoottoriauto.
 # Sähköautolla on ominaisuutena akkukapasiteetti kilowattitunteina.
 # Polttomoottoriauton ominaisuutena on bensatankin koko litroina.
 # Kirjoita aliluokille alustajat.
@@ -10,3 +10,42 @@
 # ja yhden polttomoottoriauton (ACD-123, 165 km/h, 32.3 l).
 # Aseta kummallekin autolle haluamasi nopeus,
 # käske autoja ajamaan kolmen tunnin verran ja tulosta autojen matkamittarilukemat.
+
+
+class Auto:
+    def __init__(self, nimi):
+        self.nimi = nimi
+
+    def tulosta_tiedot(self, tyyppi):
+        self.tyyppi = tyyppi
+        print(f" - Auton tyyppi: {self.tyyppi}")
+
+class sähkö(Auto):
+    def __init__(self, kulutus, kapasiteetti):
+        super().__init__(Auto)
+        self.kulutus = kulutus
+        self.kapasitettti = kapasiteetti
+
+    def tulosta_tiedot(self):
+        super().tulosta_tiedot()
+        print(f' - Auton tyyppi: {self.tyyppi}, {self.sukunimi}')
+        print(f' - Auton kulutus: {self.kulutus}')
+        print(f"-")
+
+
+class polttomoottori(Auto):
+    def __init__(self, julkaisun_nimi, päätoimittaja):
+        super().__init__(julkaisun_nimi)
+        self.päätoimittaja = päätoimittaja
+
+    def tulosta_tiedot(self):
+        super().tulosta_tiedot()
+        print(f' - Päätoimittaja: {self.päätoimittaja}')
+
+
+autot = []
+autot.append(Auto_sähkö('Rosa', 'Liksom', "Hytti n:o 6", 200))
+autot.append(Auto_polttomoottori("Aku Ankka", "Aki Hyyppä"))
+
+for j in autot:
+    j.tulosta_tiedot()
