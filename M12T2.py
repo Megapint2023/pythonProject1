@@ -17,8 +17,10 @@ import json
 hakusana = input("Anna paikkakunta: ")
 api_key = "543cd516ab7095dab8faac0cf1a3731d"
 
-pyyntö = "https://api.openweathermap.org/data/2.5/weather?q={hakusana}&appid={api_key}"
+pyyntö = f"https://api.openweathermap.org/data/2.5/weather?q={hakusana}&appid={api_key}"
 vastaus = requests.get(pyyntö)
+
+
 data = vastaus.json()
 
 print(vastaus)
