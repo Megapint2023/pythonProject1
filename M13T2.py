@@ -62,19 +62,34 @@ yhteys = mysql.connector.connect(
 
 @app.route('/airport/<icao>')
 def hae_tiedot(icao):
-    sql = f"SELECT name, municipality FROM airport WHERE ident = '{icao}'"
-    print(sql)
     kursori = yhteys.cursor()
-    kursori.execute(sql)
+    kursori.execute("SELECT name, municipality FROM airport WHERE ident = '{icao}'")
     tulos = kursori.fetchall()
+
+    if tulos:
+        vataus = {
+            "ICAO:": icao,
+            "LENTOKENTTÄ:": tulos[1],
+            "KAUPUNKI:": tulos[2]
+        }
+        tilakoodi = 200
+    else:
+        vastaus = {
+            "status": 404,
+            "teksti": "Virheellinen ICAO-koodi."
+        }
+        tilakoodi = 404
+
+    kursori.close()
+
     if kursori.rowcount >0 :
         for rivi in tulos:
             print(f"KAUPUNKI: {rivi[0]}, KUNTA: {rivi[1]}")
     else:
         print("Kyseisellä ICAO-koodilla ei löytynyt tietoja.")
     kursori.close()
-print ("Ohjelma hakee ICAO-koodilla lentokentän tiedot.")
-icao = input(str("ICAO koodi:"))
+# print ("Ohjelma hakee ICAO-koodilla lentokentän tiedot.")
+# icao = input(str("ICAO koodi:"))
 hae_tiedot(icao)
 
 def airport(icao):
