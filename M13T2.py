@@ -67,7 +67,7 @@ def hae_tiedot(icao):
     tulos = kursori.fetchall()
 
     if tulos:
-        vataus = {
+        vastaus = {
             "ICAO:": icao,
             "LENTOKENTTÄ:": tulos[1],
             "KAUPUNKI:": tulos[2]
@@ -82,24 +82,6 @@ def hae_tiedot(icao):
 
     kursori.close()
 
-    if kursori.rowcount >0 :
-        for rivi in tulos:
-            print(f"KAUPUNKI: {rivi[0]}, KUNTA: {rivi[1]}")
-    else:
-        print("Kyseisellä ICAO-koodilla ei löytynyt tietoja.")
-    kursori.close()
-# print ("Ohjelma hakee ICAO-koodilla lentokentän tiedot.")
-# icao = input(str("ICAO koodi:"))
-hae_tiedot(icao)
-
-def airport(icao):
-    tulos = icao
-    tilakoodi = 200
-    vastaus = {
-        "ICAO:": icao,
-        "Lentokenttä:": tulos
-    }
-
     jsonvast = json.dumps(vastaus)
     return Response(response=jsonvast, status=tilakoodi, mimetype="application/json")
 
@@ -107,10 +89,20 @@ def airport(icao):
 def page_not_found(virhekoodi):
     vastaus = {
         "status": 404,
-        "teksti": "Virheellinen päätepiste"
+        "teksti": "Virheellinen päätepiste."
     }
     jsonvast = json.dumps(vastaus)
     return Response(response=jsonvast, status=404, mimetype="application/json")
 
 if __name__ == '__main__':
     app.run(use_reloader=True, host='127.0.0.1', port=3000)
+
+
+#    if kursori.rowcount >0 :
+#        for rivi in tulos:
+#            print(f"KAUPUNKI: {rivi[0]}, KUNTA: {rivi[1]}")
+#    else:
+#        print("Kyseisellä ICAO-koodilla ei löytynyt tietoja.")
+# print ("Ohjelma hakee ICAO-koodilla lentokentän tiedot.")
+# icao = input(str("ICAO koodi:"))
+
