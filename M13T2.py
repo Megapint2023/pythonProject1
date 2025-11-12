@@ -4,6 +4,17 @@
 # Esimerkiksi EFHK-koodia vastaava GET-pyyntö annetaan muodossa: http://127.0.0.1:3000/kenttä/EFHK.
 # Vastauksen on oltava muodossa: {"ICAO":"EFHK", "Name":"Helsinki Vantaa Airport", "Municipality":"Helsinki"}.
 
+# mysql -u megapint -p
+# wine
+# DB: flight_game
+# TABLES: airport / country / game / goal / goal_reached
+# USE DB: airport
+# DESCRIPTION: id / ident / type / name / keywords / latitude_deg / longitude_Deg / elevation_ft / continent /
+# iso_country / iso_region / municipality / scheduled_service / gps_code / iata_code / local_code /home link
+# ICAO = ident !!!
+# airport name = name !!!
+
+
 from flask import Flask, Response
 import json
 
