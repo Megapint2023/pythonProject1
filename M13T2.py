@@ -47,24 +47,42 @@
 
 from flask import Flask, Response
 import json
+import mysql.connector
 
 app = Flask(__name__)
 
-def is_prime(n):
-    if n < 2:
-        return False
-    for i in range(2, int(n**0.5) + 1):
-        if n % i == 0:
-            return False
-    return True
+yhteys = mysql.connector.connect(
+         host='123.0.0.1',
+         port= 3306,
+         database='flight_game',
+         user='megapint',
+         password='wine',
+         autocommit=True
+         )
 
-@app.route('/alkuluku/<int:luku>')
-def alkuluku(luku):
-    tulos = is_prime(luku)
+@app.route('/airport/<icao>')
+def hae_tiedot(icao):
+    sql = f"SELECT name, municipality FROM airport WHERE ident = '{icao}'"
+    print(sql)
+    kursori = yhteys.cursor()
+    kursori.execute(sql)
+    tulos = kursori.fetchall()
+    if kursori.rowcount >0 :
+        for rivi in tulos:
+            print(f"KAUPUNKI: {rivi[0]}, KUNTA: {rivi[1]}")
+    else:
+        print("Kyseisellä ICAO-koodilla ei löytynyt tietoja.")
+    kursori.close()
+print ("Ohjelma hakee ICAO-koodilla lentokentän tiedot.")
+icao = input(str("ICAO koodi:"))
+hae_tiedot(icao)
+
+def airport(icao):
+    tulos = icao
     tilakoodi = 200
     vastaus = {
-        "Number": luku,
-        "isPrime": tulos
+        "ICAO:": icao,
+        "Lentokenttä:": tulos
     }
 
     jsonvast = json.dumps(vastaus)
