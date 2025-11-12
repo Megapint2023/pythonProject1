@@ -8,20 +8,20 @@ import json
 
 app = Flask(__name__)
 
-def is_prime(n):
-    if n < 2:
+def is_prime(x):
+    if x < 2:
         return False
-    for i in range(2, int(n**0.5) + 1):
-        if n % i == 0:
+    for i in range(2, x):
+        if x % i == 0:
             return False
     return True
 
-@app.route('/alkuluku/<int:luku>')
-def alkuluku(luku):
-    tulos = is_prime(luku)
+@app.route('/alkuluku/<int:x>')
+def alkuluku(x):
+    tulos = is_prime(x)
     tilakoodi = 200
     vastaus = {
-        "Number": luku,
+        "Number": x,
         "isPrime": tulos
     }
 
@@ -40,21 +40,13 @@ def page_not_found(virhekoodi):
 if __name__ == '__main__':
     app.run(use_reloader=True, host='127.0.0.1', port=3000)
 
-#def tulos(luku):
-#    if luku < 2:
-#        return False
-#    for i in range(2, int(luku**0.5) +1):
-#        if luku % i == 0:
-#            return False
-#        return True
-#
 #    try:
-#        luku = float(luku)
+#        x = float(x)
 #
 #        tilakoodi = 200
 #        vastaus = {
 #            "status": tilakoodi,
-#            "luku": luku,
+#            "x": x,
 #        }
 #
 #    except ValueError:
